@@ -1,0 +1,129 @@
+[ 프론트엔드 ] : HTML, CSS, JS 
+HTML    : 마크업 언어 ex) 사람 뼈
+CSS     : 스타일 언어 ex) 사람 옷
+JS      : 객체지향 언어 ex) 사람 동작
+
+[ CSS ]
+    - Cascading Style Sheets
+    - Cascading(위에서 아래로), Style(꾸미기), Sheets(덮기)
+    1. 위에서 아래로 꾸미기 시트를 덮는다. (대상은 마크업)
+    2. 주로 HTML 언어를 꾸미는 목적으로 사용
+    3. CSS는 HTML에 종속된 스타일언어. HTML 안에서 실행.
+
+[ CSS 적용방법 ]
+    방법1
+        <마크업명 style="속성명:값; 속성명:값; "/>
+    방법2
+        <head>
+            <style>
+                식별자{ 속성명:값; 속성명:값; }
+            </style>
+        </head>
+    *방법3* : 협업과 유지보수에 유용하므로 3번 씁니다.
+        * CSS확장자 파일 내에서
+            식별자 { 속성명:값; 속성명:값; }
+        * HTML에서 CSS확장자 파일 불러오기
+            <head>
+                <link href="CSS파일경로" rel="stylesheet" />
+            </head>
+    * 브라우저에서 F12 개발자도구로 임시 테스트 가능
+
+[ CSS 주석 ]
+    - css : /* 주석처리 */
+    - html : <!-- 주석처리 -->
+
+[CSS 구조]
+    선택자{ 속성명 : 값 ; }
+    - 속성명 vs 속성값
+        name(사람이름) : 장미
+        name(사람이름) : 동진
+        flowerName(꽃이름) : 장미
+    객체{ 속성명 : 값 ; }
+
+[ CSS 선택자/식별자 ] : CSS 속성을 적용할 대상 구분
+    1. *           : 전체 선택자
+    2. 마크업명     : 마크업 선택자
+    3. .클래스      : 클래스 선택자
+    4. #아이디      : 아이디 선택자
+    - 만일 속성이 중복일 때, 우선순위
+    (본문 style 속성) > #id > .class > 마크업명 > *(와일드카드)
+    - 그외 중복일 때는 마지막 작성한 코드의 속성이 적용.
+    - 관례적으로 css에서는 최대한 class 선택자 활용, 특정 부분만 id를 씀
+    - 여러개 선택자를 한 번에 적용 : 쉼표 이용한 다중 선택자
+        - 선택자A , 선택자B { 속성명 : 값 ; }
+    - 자식 선택자 : > 이용하여 자식 선택자를 선택
+        - 부모선택자 > 자식선택자 { }
+    - 자손 선택자 : 띄어쓰기 이용하여 자손 선택자 선택
+        - 부모선택자 자손선택자 { }
+
+[ CSS 선택자 예시 ]
+    /* 1. 전체 선택자 */
+    *{ color : red; }
+    /* 2. 마크업 선택자 */
+    h4{ color : blue; }
+    /* 3. 클래스 선택자 : 복수개념 */
+    .구역1{ color : darkorange; }
+    .구역3{ color : beige; }
+    /* 4. 아이디 선택자 : 단일개념 */
+    #구역2{ color : brown; }
+    /* 5. 다중 선택자 */
+    h5 , h6{ color :skyblue; }
+    /* 6. 자식(하위-child) 선택자 : div 마크업 바로 아래의 h3 선택 */
+    div > h3{ color : green; }
+    div > .구역5{ color : silver; }
+    /* 7. 자손 선택자 : div 마크업 내 모든 선택자 선택 */
+    div h3{ color : purple; }
+    
+[ CSS 텍스트 속성 ]
+    1. font-family          : 텍스트 폰트
+    2. font-size            : 텍스트 크기
+    3. font-style: italic;  : 이탤릭체
+    4. font-weight          : 볼드 기능
+    5. color                : 텍스트 색상
+    6. word-spacing         : 어간
+    7. letter-spacing       : 자간
+    8. line-height          : 줄 간격
+    9. text-align           : 텍스트 정렬
+    10. text-decoration     : 텍스트 선 긋기 
+    11. text-shadow         : 텍스트 그림자
+    12. border              : 테두리
+    13. border-radius       : 둥근 모서리
+    14. box-shadow          : 그림자
+    15. width               : 구역 가로 사이즈
+    16. height              : 구역 세로 사이즈
+    17. padding             : 여백 여백
+    18. margin              : 바깥 여백
+        margin: 0 auto;     : 가운데 정렬.
+    19. background-color    : 배경 색상
+    20. display :
+        1. inline
+        2. block
+        3. inline-block
+        4. none
+        5. flex             : 하위 요소의 배치 방법
+            1. flex-wrap
+                1) nowrap(기본) : 하위 요소 크기가 크면 자동 크기 맞춤
+                2) wrap         : 하위 요소 크기가 크면 자동 줄바꿈
+            2. flex-direction
+                1) row(기본)    : 하위 요소들의 가로 방향 배치
+                2) column       : 하위 요소들의 세로 방향 배치
+            3. justify-content  : 가로 정렬 방법
+                1) flex-start   : 왼쪽 정렬
+                2) flex-end     : 오른쪽 정렬
+                3) center       : 가운데 정렬
+                4) space-between: 양쪽 여백 끝에 여백 없이 사이 여백 균등 정렬
+                5) space-around : 양쪽 여백 끝에 사이 여백 50% 사이 여백 균등 정렬
+                6) space-evenly : 사이 여백 균등 정렬
+            4. align-items      : 세로 정렬 방법
+                1) stretch(기본): 부모 세로 크기만큼 늘림
+                2) center       : 가운데 정렬
+                3) flex-end     : 세로 밑변 정렬
+                4) flex-start   : 세로 윗변 정렬
+    21. box-sizing          : 구역 테두리 맞춰서 작성
+
+
+
+
+
+
+

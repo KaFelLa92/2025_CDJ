@@ -1,0 +1,52 @@
+*{
+    border: 1px solid red;
+}
+
+/* display:inline [ span 기본값 ] */
+
+.s1{
+    display: inline; /* 한 줄에 해당 구역 포함 : <span> <a> */
+    /* inline으로는 좌우 마진 패딩만 적용 */
+    width : 100px; height: 100px;
+    margin: 20px;  /* 바깥여백 */ 
+    padding: 20px; /* 안쪽여백 */ 
+}
+
+.s2{
+    display: block; /* 한 줄 차지 구역 : <div> <h> <p> <ul> <li> 기본 값*/
+    width : 100px; height: 100px;
+    margin: 20px;  /* 바깥여백 */ 
+    padding: 20px; /* 안쪽여백 */ 
+}
+
+.s3{
+    display: inline-block; /* 한줄에 해당 구역 포함하면서 크기 조정 : <input /> <button> <img /> <audio> */
+    width : 100px; height: 100px;
+    margin: 20px;  /* 바깥여백 */ 
+    padding: 20px; /* 안쪽여백 */ 
+}
+
+.s4{
+    display: none; /* 표시안함 */
+    /* JS와 연계하여, 조건에 따라 block 등으로 바꿀 수 있다 */ 
+}
+
+.flexbox1{
+    display: flex;  /* 부모 상속 받으면 하위 요소 인라인됨 */
+}
+
+/* 1. FLEX, 2. FLOAT 3. GRID */
+
+.box{
+    box-sizing : content-box ;
+    width : 500px; /* 안쪽 여백 빼고 500px */
+    padding: 10px; /* 안쪽 여백 추가로 구역 전체 크기 520px됨 */
+}
+
+.box2{
+    box-sizing: border-box; /* 빈도 높음. 구역 크기 컨텐츠+안쪽 여백 기준 */
+    width : 500px;
+    padding: 10px;  /* 안쪽 여백을 포함한 500px */
+}
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>DJ's Device 3</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+        <script src='main.js'></script>
+    </head>
+    <body>
+
+        <img src="./dogdog.png"/>           <!-- 절대경로 -->
+        <img src="../day03/dogdog.png"/>    <!-- 상대경로 -->
+        <img src="../dogdog.png"/>          <!-- 상대경로 -->
+        <img src="http://192.168.40.133:5500/day02/dogdog.png"/>                       
+        <!-- 절대경로(서버) -->
+        <img src="C:\Users\tj-bu-702-03\Desktop\2025_CDJ\day02\dogdog.png"/>           
+        <!-- 절대경로(로컬) -->        <!-- 서버로 접속하면 로컬 경로에 들어갈 수 없음-->
+
+        <!-- https://pixabay.com/ko/ 픽사베이 : 무료 사진/영상/음원 -->
+        <!-- 저작권 없는 폰트는 눈누에서 -->
+        <!-- 사업하려면 저작권 조심해라 상품권 날아온다 -->
+
+        <audio src="audio.mp3" controls="controls" > </audio>  <!-- 오디오 비디오는 닫는 마크업 존재 -->
+        <!-- 브라우저 정책 상 자동실행 안 됨. -->
+
+        <video src="video.mp4" controls="controls" autoplay="autoplay" muted="muted"> </video>
+        <!-- autoplay에 muted를 함께 넣어야 음소거 상태에서 비디오 자동실행 가능해짐.-->
+
+        <!-- 멀티미디어 : (유튜브 퍼가기 기능에 코드 제공) -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Nc4G-4G3zZE?si=_XASnajqABU1Q9GB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <!-- 지도 : (구글 지도 퍼가기 기능에 코드 제공)-->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.7175793625847!2d126.71712714955748!3d37.490990459739216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b7c4657c1fbbb%3A0x960379a8e77c411e!2z642U7KGw7J2A7Lu07ZOo7YSw7ZWZ7JuQ!5e0!3m2!1sko!2skr!4v1748319587963!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </body>
+</html>

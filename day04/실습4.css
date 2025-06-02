@@ -1,0 +1,44 @@
+/* CSS 주석 처리 */
+
+.container{
+    width: 300px;
+}
+
+.container-fir{
+    width: 100%;
+    aspect-ratio: 1 / 1; /* squire */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 0.01px rgb(185, 185, 185);
+    border-bottom: none;
+    padding: 10px;
+    box-sizing: border-box; /* 박스 크기 계산에 패딩을 포함 */
+    overflow: hidden;
+}
+
+.container-fir img{
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+}
+
+.container-sec{
+    border: solid 0.01px rgb(185, 185, 185);
+    padding: 10px;
+}
+
+.price{
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.explain{
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.review > .highlight{
+    color: orange;
+    font-weight: bold;
+}

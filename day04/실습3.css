@@ -1,0 +1,48 @@
+.boxform{
+    text-align: center;
+    border : solid 0 red;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2); /* 연한 빨간 그림자*/
+    padding: 40px;
+    width: 300px;
+    margin : 0 auto;
+}
+
+.title{
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.IDPW{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.round{
+    width: 200px;
+    height: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: -5px auto;
+    border: solid 1px gray ;
+}
+
+.button{
+    border: solid 0 white;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 8px 20px;
+    margin-bottom: 30px;
+}
+
+.info{
+    font-size: 15px;
+}
+
+.joinus{
+    color: blue;
+    text-decoration: none;
+}

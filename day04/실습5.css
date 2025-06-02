@@ -1,0 +1,62 @@
+*{
+    background-color: pink;
+    text-align: center;     /* img input audio는 이걸로 닫힘*/
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container{
+    width: 300px;
+    padding: 20px;
+    margin: 0 auto;
+
+}
+
+.container > .title{
+    font-weight: bold;
+    font-size: 20px;
+    border: solid 2px white;
+    border-radius: 30px;    /* 둥근 모서리 */
+    margin-bottom: 30px;    /* 하단 마진 */
+    padding: 10px;          /* 사방 패딩 */
+    background-color: pink;
+}
+
+.container > .thumbnail img{
+    /* 정사각형 만들고 둥근모서리 -> 타원, 원 */
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.inform{
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.container > .linkzone{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+a{ /* a태그는 클래스 대신 전체로 두는 경우가 많음 */
+    display: block;
+    border: solid 2px skyblue;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: skyblue;
+    text-decoration: none; /* 밑줄 제거 */
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 12px;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: deepskyblue ;
+}

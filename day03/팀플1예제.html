@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>고객만족 설문조사</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 40px;
+            border: 1px solid rgb(0, 0, 0);
+            box-sizing: border-box;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+
+        .center-title {
+            flex: 1;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .right-box {
+            text-align: right;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+
+        .right-box input {
+            font-size: 14px;
+            padding: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-container">
+        <!-- 로고 -->
+        <img src="PaIK'S.png" alt="로고" class="logo">
+
+        <!-- 중앙 텍스트 -->
+        <div class="center-title">고객만족 설문조사</div>
+
+        <!-- 작성일자/시간 -->
+        <div class="right-box">
+            작성일자 <input type="date" /><br />
+            작성시간 <input type="time" />
+        </div>
+    </div>
+    <ol>
+        <li>
+            설문자성함 <input type="text" placeholder="고객님 성함을 적어주세요." />
+        </li>
+        <li>
+            전화번호 <input type="text" placeholder="쿠폰 증정받을 번호 기입해주세요." maxlength="50" />
+        </li>
+    </ol>
+
+    <h3>질문1. 커피 브랜드를 선택할 때 중요한 점은? (※중복선택 가능) </h3>
+    <input type="checkbox" name="브랜드중요점" /> 브랜드이미지
+    <input type="checkbox" name="브랜드중요점" /> 원두
+    <input type="checkbox" name="브랜드중요점" /> 서비스
+    <input type="checkbox" name="브랜드중요점" /> 가격
+    <input type="checkbox" name="브랜드중요점" /> 기타 <input type="text" /> <br />
+
+    <h3>질문2. 선호하는 브랜드는 무엇인가요?</h3>
+    <input type="radio" name="선호브랜드" /> 프리미엄 브랜드
+    <input type="radio" name="선호브랜드" /> 중저가 브랜드
+    <input type="radio" name="선호브랜드" /> 저가형 브랜드 <br />
+
+    <h3>질문3. 빽다방에서 선호하는 제품을 골라주세요.</h3>
+    <input type="radio" name="선호제품" /> 커피/티
+    <input type="radio" name="선호제품" /> 블랜디드
+    <input type="radio" name="선호제품" /> 배버리지
+    <input type="radio" name="선호제품" /> 디저트
+    <input type="radio" name="선호제품" /> 기타 <br />
+
+    <h3>질문4. 서비스에 대해 주고 싶은 점수를 골라주세요.</h3>
+    <input type="radio" name="점수" /> 5점
+    <input type="radio" name="점수" /> 4점
+    <input type="radio" name="점수" /> 3점
+    <input type="radio" name="점수" /> 2점
+    <input type="radio" name="점수" /> 1점
+
+    <h3>질문5. 빽다방에 건의하고픈 내용을 작성해주세요</h3>
+    <textarea cols="50" rows="5" placeholder="건의사항을 남겨주세요"></textarea>
+    <hr />
+    <input type="checkbox" name="동의여부" /> 마케팅 수신에 동의하시면 추첨을 통해 1,000분 아메리카노 쿠폰을 증정합니다.
+    <br /> <button type="button">제출버튼</button>
+
+</body>
+
+
+</body>
+
+</html>

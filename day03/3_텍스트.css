@@ -1,0 +1,40 @@
+/* 누구를{ 무엇을 : 어떻게; } */
+
+/* 웹폰트 : 폰트 저작권 주의, 눈누 잘 보고 골라요 */
+/* 영문 폰트는 구글 폰트에서 찾아라 */
+
+/* h3 { } vs .title { } */
+
+@font-face {
+    font-family: 'BMEULJIRO';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BMEULJIRO.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.title{
+    font-family: "궁서" ;   /* 글꼴/폰트 : 현재 PC 설치된 글꼴만 가능*/
+    font-size: 30px;        /* 글자크기 px(픽셀) */
+    font-style: italic;     /* 글꼴 기울기 */
+    font-weight: bold;      /* 글꼴 진하게 :h마크업 기본값 */
+}
+
+.content{
+    font-family: 'BMEULJIRO'; /* 글꼴 */
+    color : purple;         /* 글꼴 색상 */
+    word-spacing: 10px;       /* 단어 간격 : 어간 */
+    letter-spacing: 5px;      /* 글자 간격 : 자간 */
+    line-height: 150%;        /* 줄 간격 , % */ 
+}
+
+.writer{
+    text-align: center ;      /* 텍스트 가로 정렬 : left, right, center */
+    text-decoration: underline overline line-through ; 
+    /* 텍스트 선긋기 : underline(밑줄) overline(윗줄) line-through(취소선 */
+    text-shadow: 1px 1px 5px red ; /* 텍스트 그림자 : x축, y축, 흐림정도, 색상 */
+    /* 색상 : 3가지 (1. 색상명 2. RGB 3. 헥스코드(16진수))*/
+    color: green; /* 1. 색상명 */
+    color: rgb( 140, 200, 100 ); /* 2. RGB */ 
+    color: #000000; /* 3. 헥스코드 */
+}
+
