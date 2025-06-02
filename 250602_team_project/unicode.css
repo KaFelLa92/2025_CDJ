@@ -114,7 +114,9 @@ body {
 }
 
 /* 서브페이지 영역 */
-.sub_page_wrap {}
+.sub_page_wrap {
+    margin: 0 auto;
+}
 
 /* 서브(Sub) 상단 배너/타이틀 */
 .sub_banner {
@@ -187,8 +189,6 @@ a {
 
 /* 아스키 유니코드 CSS*/
 
-#askiuni {}
-
 .askiuni_withtable {
     width: 100%;
     display: flex;
@@ -248,17 +248,24 @@ a {
 
 .askinuni_summary {
     color: #4A90E2;
+    margin-bottom: 50px;
 }
 
 .askiuni_sum {
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.askiuni_sum_num {
-    text-align: left;
-    font-size: 50px;
+.askiuni_sum li {
+    margin: 15px 0;
+    padding: 15px;
+    background: #f8f9ff;
+    border-left: 4px solid #4A90E2;
+    border-radius: 0 8px 8px 0;
+    position: relative;
 }
 
 .askiuni_img {
@@ -267,32 +274,37 @@ a {
     justify-content: space-between;
 }
 
-.askiuni_img > img {
+.askiuni_img>img {
     width: 200px;
     height: 200px;
     border-radius: 20px;
 }
 
-.askiuni_tableimg{
+.askiuni_tableimg {
     text-align: center;
     margin: 0 auto;
-    justify-content: space-between;    
+    justify-content: space-between;
 }
 
-.askiuni_tableimg > img {
+.askiuni_tableimg>img {
     width: 400px;
     height: 400px;
     border-radius: 20px;
 }
 
-.askiuni_flag{
+.askiuni_flag {
     text-align: center;
     margin: 0 auto;
-    justify-content: space-between;    
+    justify-content: space-between;
 }
 
-.askiuni_flag > img {
+.askiuni_flag>img {
     width: 800px;
     height: 800px;
     border-radius: 20px;
+}
+
+.askiuni_flag > p{
+    font-weight: bold;
+    font-size: 30px;
 }

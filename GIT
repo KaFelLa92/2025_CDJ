@@ -21,6 +21,10 @@
     5. vscode 재실행
     6. vscode 왼쪽 메뉴 [소스제어] 클릭 -> [GitHub] 게시 -> [로그인]허용 -> 웹페이지 (깃허브페이지) 로그인 -> [continue]
     7. publish to github public repository (선택 후) -> [확인]
+    8. vscod 상단 메뉴 [ 터미널 ] 클릭 -> [ 새 터미널 ]
+    9. 터미널 상단메뉴 [+] 옆에 [v] 클릭 -> [ Git Bash ] *깃허브 전용 터미널
+        git config --global user.name "KaFelLa92"
+        git config --global user.email "choidj10@gmail.com"
 
 
 
