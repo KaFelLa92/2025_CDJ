@@ -14,3 +14,41 @@
     left: 50px; /* 기존 위치에서부터 왼쪽변 기준으로 50px 오른쪽 이동 */
 
 }
+
+.box3{
+    background-color: green;
+    position: absolute;
+    /* absolute(절대적인) 부모요소부터 시작함*/
+    top : 50px;
+    left: 50px;
+}
+
+.box4{
+    background-color: blue;
+    position: static;
+    /* static(정적인) 코드 작성 순 배치, 위치 속성 불가 */
+    top: 50px; /* 사용 불가 */
+    left: 50px; /* 사용 불가 */
+}
+
+.box5{
+    background-color: gray;
+    position: fixed;
+    /* fixed(고정된) 디바이스(화면) 위치 고정 */
+    bottom: 100px; /* 화면 아래변 기준 100px 위로 이동 */
+    right: 100px; /* 화면 오른변 기준 100px 왼쪽 이동 */
+}
+
+.parent{
+    background-color: orange;
+    padding: 10px;
+    /* absolute 사용시, 부모가 relative 사용해야 따라감. 안 그러면 body에 걸림. */
+    position: relative;
+}
+
+.box6{ /* .box6 부모는 .parent */
+    background-color: beige;
+    position: absolute;
+    top: 100px;
+    right: 100px;
+}
