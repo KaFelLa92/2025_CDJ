@@ -1,0 +1,50 @@
+#boxing {
+    background-color: red;
+    width: 700px;
+    height: 450px;
+    margin: 0 auto;
+    position: relative;
+    /* relative 써야 absolute에서 부모 요소 따라감 */
+}
+
+.box {
+    background-color: yellow;
+    width: 100px;
+    height: 70px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+}
+
+.html {
+    left: 300px;
+    top: 50px;
+}
+
+.java {
+    left: 125px;
+    top: 125px;
+}
+
+.python {
+    left: 475px;
+    top: 125px;
+}
+
+.JS {
+    left: 125px;
+    top: 250px;
+}
+
+.react {
+    left: 475px;
+    top: 250px;
+}
+
+.spring {
+    left: 300px;
+    bottom: 50px;
+}
