@@ -1,0 +1,158 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style-type: none;
+}
+
+#wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#header {
+    height: 200px;
+}
+
+#main {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    margin-bottom: 200px;
+}
+
+.mainImg>img {
+    width: 500px;
+}
+
+.mainLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.mainLogin>img {
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.loginBox {
+    margin-bottom: 5px;
+}
+
+.passwordBox {
+    margin-bottom: 10px;
+}
+
+.box {
+    background-color: #fbfbfb;
+    width: 250px;
+    height: 38px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.loginContainer .loginClick {
+    background-color: #4cb5f9;
+    width: 250px;
+    height: 30px;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 0;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.orLine {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #8e8e8e;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.orLine::before,
+.orLine::after {
+    content: "";
+    flex: 1px;
+    height: 1px;
+    background: #dbdbdb;
+    /* 연한 회색 실선 */
+}
+
+.orLine::before {
+    margin-right: 10px;
+}
+
+.orLine::after {
+    margin-left: 10px;
+}
+
+.facebookLogin>img {
+    width: 15px;
+    height: 15px;
+}
+
+.facebookLogin {
+    color: #4cb5f9;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.losePassword {
+    color: #1068a3;
+    font-size: 13px;
+    margin-bottom: 40px;
+}
+
+.account {
+    font-size: 13px;
+}
+
+.account>a {
+    color: #4cb5f9;
+    font-weight: bold;
+}
+
+
+#footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.footerLink,
+.footerMain {
+    color: #848484;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.footerLink>li>a {
+    color: #848484;
+    margin-left: 20px;
+}
+
+.footerMain>li {
+    margin-left: 20px;
+}
