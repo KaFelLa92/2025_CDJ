@@ -1,0 +1,61 @@
+/* 1. background */
+.box{
+    border: 2px solid red;
+    padding: 30px;
+}
+
+.box p{
+    background-color: white;
+    width: 200px;
+    padding: 5px;
+    border: 1px solid white;
+}
+
+.color1{
+    /* background-color: blue;
+    background-color: rgb(0, 0, 255); 
+    background-color: #0000ff; */
+    background-color: rgba(0, 0, 255, 0.468); 
+    /* rgba (레드, 그린, 블루, 투명도) : 1(100%) */
+}
+
+.img1{ /* url(파일경로) */
+    background-image: url("background.jfif");
+    background-position: center; /* 이미지 위치 */
+    background-repeat: no-repeat; /* 채우기 없음 */
+}
+
+.img2{
+    background-image: url("패턴.avif");
+    background-repeat: repeat; /* (기본값) 비어있는 공간이 있으면 채움 */
+}
+
+.img3{
+    background-image: url("돋.png");
+    background-repeat: no-repeat; /* 채우기 없음 */
+    background-position: center; /* 이미지 위치 */
+    background-size: contain; /* 비율 유지, 요소 안에 표시(빈 공간 생길 수 있음) */
+    background-color: black; /* 만일 비어있는 공간이 있을 때 배경색 */
+}
+
+.img4{
+    background-image: url("background.jfif"); /* 배경 이미지 */
+    background-repeat: no-repeat; /* 채우기 */
+    background-size: cover; /* 비율 유지, 잘림 생길 수 있음 */
+    background-position: center;
+    background-attachment: fixed; /* 스크롤 이동해도 배경 고정 */
+    /* fixed : 패럴랙스 효과, 텍스트는 지정된 요소와 고정 되고 배경은 스크롤 따라 이동 */
+}
+
+.box2{ /* 아이콘 한 이미지에서 여러 개 추출 */ 
+    width: 120px; height: 120px;
+    border: solid 2px red;
+    background-image: url("naverIcon.png"); /* 주의 : 지정된 요소의 사이즈 필요 */
+    background-repeat: no-repeat; /* 채우기 없음 */
+    background-position: -8px -168px; /* 왼쪽 상단부터 */
+
+}
+
+
+
+

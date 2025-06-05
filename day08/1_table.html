@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <link rel='stylesheet' href='1_table.css'>
+</head>
+
+<body>
+
+    <h1> 테이블 꾸미기1 </h1>
+    <table class="basicTable"> <!-- 전체 5행 6열 -->
+        <tr> <!-- 행 추가-->
+            <th> 번호 </th> <!-- 열 제목 -->
+            <th> 이름 </th>
+            <th> 국어 </th>
+            <th> 영어 </th>
+            <th> 수학 </th>
+            <th> 평균 </th>
+        </tr>
+        <tr>
+            <td> 1 </td>
+            <td> 김민준 </td> <!-- td 데이터셀 -->
+            <td> 85 </td>
+            <td> 97 </td>
+            <td> 53 </td>
+            <td> 78 </td>
+        </tr>
+        <tr>
+            <td> 2 </td>
+            <td> 장만옥 </td> <!-- td 데이터셀 -->
+            <td> 43 </td>
+            <td> 68 </td>
+            <td> 24 </td>
+            <td> 45 </td>
+        </tr>
+        <tr>
+            <td> 3 </td>
+            <td> 위성락 </td> <!-- td 데이터셀 -->
+            <td colspan="2"> 미응시 </td> <!-- colspan : 열 병합-->
+            <td> 96 </td>
+            <td> 32 </td>
+        </tr>
+        <tr>
+            <td colspan="2"> 총 응시 인원 : </td>
+            <td colspan="4"> 3명 (1명 일부 과목 미응시) </td>
+        </tr>
+    </table>
+
+    <h1> 테이블 꾸미기2 </h1>
+    <table class="styleTable">
+        <thead> <!-- 테이블 제목 구역 -->
+            <tr>
+                <th> 월 </th>
+                <th> 제품A </th>
+                <th> 제품B </th>
+                <th> 제품C </th>
+                <th> 제품D </th>
+            </tr>
+        </thead>
+        <tbody> <!-- 테이블 본문 구역 -->
+            <tr>
+                <th> 1월 </th>
+                <th> 170 </th>
+                <th> 240 </th>
+                <th> 190 </th>
+                <th> 600 </th>
+            </tr>
+            <tr>
+                <th> 2월 </th>
+                <th> 170 </th>
+                <th> 240 </th>
+                <th> 190 </th>
+                <th> 600 </th>
+            </tr>
+            <tr>
+                <th> 3월 </th>
+                <th> 170 </th>
+                <th> 240 </th>
+                <th> 190 </th>
+                <th> 600 </th>
+            </tr>
+        </tbody>
+        <tfoot> <!-- 테이블 푸터 구역 -->
+            <tr>
+                <th> 합계 </th>
+                <th> 660 </th>
+                <th> 920 </th>
+                <th> 740 </th>
+                <th> 2370 </th>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+
+</html>

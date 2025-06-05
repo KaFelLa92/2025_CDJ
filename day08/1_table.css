@@ -1,0 +1,76 @@
+/*
+
+    [선택자]
+        1. . (vs) # (vs) 마크업 (vs) *
+        2. 띄어쓰기 (vs) > (vs) ,
+
+    [ 형제 선택자 ] : 자식 선택자 다수일 때
+        - 부모 선택자 자식선택자명 : nth-child(순번)
+        - nth-of-type (even OR odd)
+
+    [ 속성 선택자 ] : 선택자가 지정된 HTML속성명 가질 때
+        - 선택자[HTML속성명]
+
+*/
+
+/* 테이블 꾸미기1 */
+.basicTable{
+    width: 500px;
+    border: 1px solid red;
+}
+
+.basicTable th, .basicTable td{
+    border: 1px solid red;
+    padding: 5px;
+}
+
+.basicTable td:nth-child(1){
+    background-color: aqua;
+}
+/* 테이블 마크업 td 자식 중 첫번째에 배경색 */
+
+.basicTable > tr > td:nth-child(3)
+.basicTable > tr > td:nth-child(4)
+.basicTable > tr > td:nth-child(5)
+.basicTable > tr > td:nth-child(6){
+    text-align: right;
+}
+/* 3, 4, 5, 6열 텍스트 오른쪽 정렬 */
+
+.basicTable td[colspan]{
+    text-align: center;
+}
+/* td 중 'colspan' 속성 가진 선택자 */
+
+.basicTable tr:nth-child(5) > td[colspan]{
+    background-color: bisque;
+}
+
+/* 테이블 꾸미기2 */
+.styleTable{
+    width: 700px;
+}
+
+.styleTable > thead > tr > th{
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+}
+
+/*
+    :nth-of-type(odd) : 형제들 중 홀수
+    :nth-of-type(even): 형제들 중 짝수
+*/
+
+.styleTable > tbody tr:nth-of-type(odd){
+    background-color: #eeeeee;
+}
+
+.styleTable > tbody tr:hover{
+    background-color: gray;
+    color : red;
+}
+
+.styleTable td , .styleTable th{
+    padding: 10px;
+}
