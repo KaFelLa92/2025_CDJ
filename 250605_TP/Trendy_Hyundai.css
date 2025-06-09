@@ -1,7 +1,265 @@
-.th-heroImg img{
-    width: 100%;
-    max-height: 800px;
-    object-fit: cover;
-    overflow: hidden;
+/* 전체 */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 
+a {
+    color: black;
+    text-decoration-line: none;
+}
+
+li {
+    list-style: none;
+}
+
+/* Trendy Hyundai 시작 */
+
+.th-heroImg {
+    background-image: url(./img/TH/th-Heroimg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 700px;
+    overflow: visible;
+    position: relative;
+    clip-path: ellipse(100% 100% at 50% 0%);
+}
+
+#th-Main {
+    width: 1120px;
+    margin: 0 auto;
+}
+
+.th-nav {
+    display: flex;
+    position: absolute;
+    top: 5%;
+    left: 25%;
+    transform: translateX(-50%);
+}
+
+.th-nav>li {
+    margin-right: 10px;
+}
+
+.th-navArrow>a {
+    color: white;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.th-navArrow::after {
+    content: ">";
+    color: white;
+    margin-left: 10px;
+}
+
+.th-navHL>a {
+    color: #007fa8;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.th-subTitle {
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.th-mainTitle {
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translateX(-50%);
+    font-size: 45px;
+}
+
+.th-login {
+    background-color: white;
+    position: absolute;
+    width: 1120px;
+    height: 110px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 650px;
+    border: 2px rgba(255, 255, 255, 0) solid;
+    gap: 300px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.th-loginText {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.th-highlight {
+    color: #0f3868;
+}
+
+.th-btnBox {
+    color: white;
+    background-color: #0f3868;
+    ;
+    border: 0;
+    width: 120px;
+    height: 40px;
+}
+
+#th-Main img {
+    margin-top: 100px;
+    width: 1120px;
+    margin-bottom: 100px;
+}
+
+.th-title {
+    font-size: 40px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.th-title::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 25px;
+    /* 고정 길이 */
+    height: 3px;
+    background-color: #007fa8;
+    /* 청록색 */
+}
+
+.th-headline {
+    font-weight: normal;
+    color: #6c6c6c;
+    margin-bottom: 70px;
+}
+
+.th-intHero {
+    width: 1120px;
+    height: 390px;
+    background-image: url("./img/TH/introduction_ioniq9.jpg");
+    position: relative;
+    margin-bottom: 7px;
+}
+
+.th-intHero>h3 {
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    top: 16%;
+    left: 6%;
+}
+
+.th-intHero>h2 {
+    font-size: 40px;
+    color: white;
+    position: absolute;
+    top: 26%;
+    left: 6%;
+}
+
+.th-Exp {
+    font-size: 13px;
+    color: #8e8e8e;
+    margin-bottom: 50px;
+}
+
+.th-Exp::before {
+    content: "*";
+    display: inline-block;
+    vertical-align: -3px;
+}
+
+.th-intChar {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.th-intBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #d3d3d3;
+    width: 370px;
+    height: 100px;
+}
+
+.th-none {
+    border-right: 0;
+}
+
+.th-listFont {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.th-intBold {
+    color: #0f3868;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.th-lowlight {
+    color: #1e1e1e99;
+}
+
+.th-intCols {
+    display: flex;
+    justify-content: space-around;
+}
+
+.th-intCols ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.th-intColsText {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.th-intCols img {
+    max-width: 250px;
+    /* 이미지 최대 크기 제한 */
+    max-height: 200px;
+}
+
+.th-intCols ul.th-moreWrap {
+    justify-content: center;
+}
+
+.th-moreWrap li {
+    width: 100%;
+}
+
+.th-moreCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 190px;
+    /* 다른 카드와 같은 높이 */
+    background: #003466;
+    /* 현대 블루 계열 */
+    color: #fff;
+    font-size: 18px;
+}
