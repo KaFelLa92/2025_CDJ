@@ -4,16 +4,162 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Happiness-Sans-Bold';
 }
 
 a {
     color: black;
     text-decoration-line: none;
+    
 }
 
 li {
     list-style: none;
+}
+
+/* 헤더 */
+
+a {
+    text-decoration: none;
+    /* 밑줄제거*/
+    color: black;
+    /*글꼴 색상*/
+}
+
+/* ul 또는 ol에서 글머리 제거*/
+li {
+    list-style: none;
+}
+
+
+
+.n1 {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#header {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header-logo img {
+    width: 170px;
+}
+
+
+.header-top {
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.header-top-menu {
+    display: flex;
+    justify-content: space-between;
+    width: 76.07%;
+}
+
+.header-top-menu1 {
+    display: flex;
+    align-items: center;
+    width: 61%;
+    min-width: 460px;
+    justify-content: space-between;
+}
+
+.header-top-menu1>li {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -.4px;
+    color: #000;
+    font-family: '현대L';
+}
+
+.header-top-util {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: clamp(260px, 40%, 340px);
+}
+
+.header-top-util>div {
+    font-size: 16px;
+    line-height: 34px;
+    color: #000;
+    font-family: '현대L';
+    display: block;
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+
+.header-top-util>.i1 {
+    display: flex;
+    align-items: center;
+}
+
+.i2::after{
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+    margin-left: 8px;
+    border-top: 5px solid #000;
+    border-right: 3px solid transparent;
+    border-left: 3px solid transparent;
+}
+
+
+.p1{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    color: #000;
+    
+}
+.p3{
+    margin-left: 1px;
+    font-weight: 700;
+    display: inline-block;
+}
+.p1-1{
+    width: 20px;
+    height: 17px;
+    position: relative;
+}
+.ii{
+    width: 1px;
+    height: .9em;
+    background: #999
+}
+.p1-2{
+    top: 50%;
+    right: 0;
+    width: 14px;
+    margin-top: -1px;
+    position: absolute;
+    background-color: #000;
+    margin-right: 1px;
+}
+
+.p1-2::before{
+    position: absolute;
+    display: block;
+    height: 2px;
+    background-color: #000;
+    content: "";
+    width: 100%;
+    top: 0;
 }
 
 /* Trendy Hyundai 시작 */
@@ -69,9 +215,9 @@ li {
     color: white;
     position: absolute;
     left: 50%;
-    top: 20%;
+    top: 15%;
     transform: translateX(-50%);
-    font-size: 20px;
+    font-size: 25px;
     font-weight: normal;
 }
 
@@ -79,9 +225,9 @@ li {
     color: white;
     position: absolute;
     left: 50%;
-    top: 25%;
+    top: 20%;
     transform: translateX(-50%);
-    font-size: 45px;
+    font-size: 50px;
 }
 
 .th-login {
@@ -99,6 +245,7 @@ li {
     border: 2px rgba(255, 255, 255, 0) solid;
     gap: 300px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    margin-top: 80px;
 }
 
 .th-loginText {
@@ -1178,14 +1325,15 @@ li {
     gap: 30px;
 }
 
-.th-endEvent , .th-endEvent2{
+.th-endEvent,
+.th-endEvent2 {
     text-align: center;
     justify-content: center;
     align-items: center;
     margin-bottom: 100px;
-} 
+}
 
-.th-endSpan{
+.th-endSpan {
     margin-top: 100px;
     margin-bottom: 100px;
 }
@@ -1194,9 +1342,245 @@ li {
     vertical-align: middle;
 }
 
-.th-endEvent span::after{
+.th-endEvent span::after {
     content: "|";
     font-size: 20px;
     margin-left: 30px;
     color: #6c6c6c;
+}
+
+/* 이하 푸터 & 챗봇 */
+
+#footer {
+    width: 100%;
+    background-color: #1c1b1b;
+
+}
+
+.footer-x {
+    width: 1120px;
+    margin: 0 auto;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+    width: 100%;
+    color: white;
+
+}
+
+.menu {
+    margin-right: 300px;
+}
+
+.menu1 {
+    display: flex;
+    font-family: "폰트L";
+}
+
+.menu2 {
+    display: flex;
+    font-family: "폰트L";
+}
+
+.menu1>div {
+    display: inline-block;
+    position: relative;
+    /* ::after 의 절대 위치 기준 */
+    padding: 0 12px;
+    /* 좌우 여백: 선과 텍스트 간 거리 */
+    color: #999;
+    /* 텍스트 색상 */
+    font-size: 14px;
+}
+
+.menu1 a,
+.menu2 a {
+    color: #999;
+}
+
+.menu1>div:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    /* 세로 중앙 정렬 */
+    right: 0;
+    /* 항목 오른쪽 끝 */
+    transform: translateY(-50%);
+    width: 1px;
+    /* 선 두께 */
+    height: 16px;
+    /* 선 길이 */
+    background-color: #999;
+    /* 선 색상 (#fff, #ccc 등 원하는 색으로) */
+}
+
+#menu1-1>a {
+    color: #fff;
+
+}
+
+.menu2>div {
+    display: inline-block;
+    position: relative;
+    /* ::after 의 절대 위치 기준 */
+    padding: 0 12px;
+    /* 좌우 여백: 선과 텍스트 간 거리 */
+    color: #999;
+    /* 텍스트 색상 */
+    font-size: 14px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.menu2>div:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    /* 세로 중앙 정렬 */
+    right: 0;
+    /* 항목 오른쪽 끝 */
+    transform: translateY(-50%);
+    width: 1px;
+    /* 선 두께 */
+    height: 16px;
+    /* 선 길이 */
+    background-color: #999;
+    /* 선 색상 (#fff, #ccc 등 원하는 색으로) */
+}
+
+.menu3 {
+    color: #999;
+    /* 텍스트 색상 */
+    font-size: 14px;
+    padding-left: 12px;
+    margin-bottom: 10px;
+    font-family: "폰트L";
+}
+
+.menu4 {
+    color: #999;
+    /* 텍스트 색상 */
+    font-size: 12px;
+    padding-left: 12px;
+    margin-bottom: 10px;
+    font-family: "폰트L";
+}
+
+.site>div>a>img {
+    width: 30px;
+    height: 31px;
+}
+
+.site>div {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 12px;
+}
+
+.site>div>button {
+    position: relative;
+    /* ::after 위치 기준 */
+    display: inline-block;
+    width: 189px;
+    height: 30px;
+    padding: 0 24px 0 13px;
+    /* 오른쪽에 화살표 들어갈 공간 확보 */
+    border: 1px solid #676767;
+    background-color: #1c1b1b;
+    color: #999;
+    text-align: left;
+    cursor: pointer;
+}
+
+.site>div>button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    /* padding-right 값보다 살짝 안쪽 */
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #999;
+    /* 화살표 색상 */
+    pointer-events: none;
+    /* 클릭 방해 안 되도록 */
+}
+
+.footer-bottom {
+    display: flex;
+    width: 100%;
+    font-size: 12px;
+    color: #999;
+    padding-top: 22px;
+    border-top: 1px solid #2a2a2a;
+    margin-top: 40px;
+    flex-direction: column;
+    padding-bottom: 60px;
+
+}
+
+.menu6 {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.menu6>li {
+    float: left;
+    width: 270px;
+    margin-top: 18px;
+    word-break: keep-all;
+    display: flex;
+
+}
+
+.menu6>li>span {
+    padding-left: 7px;
+    line-height: 18px;
+    font-family: "폰트M";
+
+}
+
+.menu6>li>img {
+    width: 40px;
+    height: 30px;
+}
+
+
+#chatbot {
+    position: fixed;
+    right: 40px;
+    z-index: 500;
+    bottom: 80px;
+}
+
+.chatbot-1 {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.chatbot-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /* 기본 상태: SVG + 컬러 */
+    background: url('https://www.hyundai.com/static/images/common/button/h_fab_default.svg') center center no-repeat;
+    background-size: contain;
+    background-color: #00aad2;
+    border-radius: 50%;
+}
+
+/* 클릭(active) 시에는 배경 이미지를 없애고 컬러만 보이게 */
+.chatbot-2:active {
+    background: #00aad2;
 }
