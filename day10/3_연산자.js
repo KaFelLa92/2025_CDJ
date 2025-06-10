@@ -147,7 +147,7 @@ console.log( `합격여부 : ${ result }`);
 // [지문9] 두 사람의 이름을 prompt함수로 각 입력받아서 만일 이름이 '유재석' 이면 뒤에 (방장) 이라고 이름 뒤에 붙이고 아니면 생략한다.  HTML의 <ol> 에 결과를 출력하시오.
 let playerName = prompt( "이름 : " );
 let result2 = playerName == "유재석" ? `${playerName}(방장)` : `${playerName}`  // 변수명은 중복 불가능 // 논리는 true 또는 false
-        //              조건                    참                  거짓
+        //           (논리)조건      ?              참       :       거짓
 document.write( `<ol> <li> ${ result2 } </li> <ol>`)
 
 
