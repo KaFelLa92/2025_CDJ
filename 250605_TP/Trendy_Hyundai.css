@@ -272,9 +272,10 @@ li {
     display: flex;
     border: 1px #eaeaea solid;
     margin-bottom: 50px;
+    background-color: #f6f6f6;
 }
 
-.th-techArt > h4 {
+.th-techArt>h4 {
     margin-bottom: 20px;
     padding-left: 20px;
 }
@@ -293,13 +294,13 @@ li {
     color: #007fa8;
     font-size: 30px;
     text-align: center;
-    margin-bottom: 50px;
 }
 
 .th-techArtLeft>img {
     width: 300px;
     margin: 0 auto;
     margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .th-techArtLeft>h3 {
@@ -324,7 +325,7 @@ li {
     display: flex;
     gap: 5px;
     padding-left: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 50px;
 }
 
 .th-techIcon {
@@ -354,6 +355,7 @@ li {
     display: flex;
     flex-direction: column;
     width: 560px;
+    position: relative;
 }
 
 .th-techRightRight>h3 {
@@ -370,14 +372,43 @@ li {
     margin-bottom: 10px;
 }
 
-.th-explainGray{
+.th-explainGray {
     color: #7a7a7a;
     font-size: 15px;
 }
 
-.th-techCol{
+.th-techCol {
     display: flex;
     justify-content: space-between;
+    margin-top: 50px;
+}
+
+.th-techBold {
+    font-weight: bold;
+}
+
+.th-techTag {
+    color: #808080;
+    width: 120px;
+    height: 50px;
+    text-align: center;
+}
+
+.th-techTag::before {
+    content: "#";
+}
+
+.th-btnBoxWide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: white;
+    background-color: #0f3868;
+    border: 0;
+    width: 150px;
+    height: 40px;
+    font-size: 15px;
 }
 
 .th-techRightRight>h3::after {
@@ -414,3 +445,156 @@ li {
     vertical-align: -3px;
 }
 
+.th-model {
+    margin-top: 100px;
+}
+
+.th-modelTop {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    border-bottom: 1px solid #f1f1f1;
+    width: 300px;
+    margin: 0 auto;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.th-modelSelect {
+    border-bottom: 1px solid #000000;
+    padding-bottom: 15px;
+    border-bottom-width: 5px;
+    font-weight: bold;
+}
+
+.th-modelContain {
+    display: flex;
+    justify-content: space-between;
+}
+
+.th-modelLeft {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    width: 540px;
+}
+
+.th-modelLeft>img {
+    width: 450px;
+    margin-bottom: 30px;
+}
+
+.th-modelRight {
+    padding: 50px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    width: 540px;
+    position: relative;
+}
+
+.th-modelHead {
+    color: #0f3868;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.th-grayText {
+    color: #6c6c6c;
+}
+
+.th-modeltitle {
+    font-size: 32px;
+}
+
+.th-modelBtn {
+    gap: 10px;
+    display: flex;
+}
+
+.th-btnBox2 {
+    color: white;
+    background-color: #818181;
+    ;
+    border: 0;
+    width: 120px;
+    height: 40px;
+}
+
+.th-arrowBtn1 {
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    background-color: #b5b4b4;
+    border: 0;
+    font-size: 20px;
+}
+
+.th-arrowBtn2 {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    background-color: #b5b4b4;
+    border: 0;
+    font-size: 20px;
+}
+
+.th-modelRight > ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 500px;
+    padding: 25px;
+}
+
+.th-modelRight > ul > li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.th-bottomline{
+  border-bottom: 1px solid #b5b4b4;
+}
+
+.th-noneBottom{
+    border-bottom: 0px
+}
+
+.th-modelHl{
+    font-size: 50px;
+    font-weight: bold;
+    color: #0077cc;
+}
+
+.th-modelPer{
+    font-weight: bold;
+    color: #0077cc;
+}
+
+.th-boldUp{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.th-bold{
+    font-weight: bold;
+}
+
+.th-indicators{
+    
+}
