@@ -83,12 +83,30 @@ document.write(`<h2> 당신의 등급은 ${grade}입니다 </h2>`)
 그렇지 않으면 "이벤트 대상이 아닙니다."를 콘솔에 출력하는 프로그램을 작성하시오.
 */
 
-let age     = Number(prompt( "나이를 입력하세요." )
-let generate= (age >= 20 && age <= 29) ? "이벤트 대상입니다." : "이벤트 대상이 아닙니다."
+/*
+let age         = Number(prompt( "나이를 입력하세요." ))
+let eventAge   = (age >= 20 && age <= 29) ? "이벤트 대상입니다." : "이벤트 대상이 아닙니다."
+console.log( `${ eventAge }`)
+격파 완료! */
 
+/* 문제 8: '좋아요' 카운터 만들기
+'좋아요' 수를 저장하는 likeCount 변수를 3으로 선언하고, 
+증감 연산자(++)를 사용하여 변수의 값을 1 증가시킨 뒤, 
+"좋아요: [숫자]" 형식으로 새로운 '좋아요' 수를 콘솔에 출력하는 코드를 작성하시오.
+let likeCount = 3;
+*/
+
+/* 
+let likeCount = 3;
+likeCount++;
+console.log( "좋아요: [" + `${likeCount}` + "]" );
+*/
 
 /* 문제 9: 할 일 목록에 항목 추가하기
-다음과 같이 할 일 목록이 담긴 todoList 배열이 있습니다. prompt를 사용하여 새로운 할 일을 입력받아 배열의 마지막에 추가한 후, 변경된 배열 전체를 콘솔에 출력하는 프로그램을 작성하시오.
+다음과 같이 할 일 목록이 담긴 todoList 배열이 있습니다. 
+prompt를 사용하여 새로운 할 일을 입력받아 배열의 마지막에 추가한 후, 
+변경된 배열 전체를 콘솔에 출력하는 프로그램을 작성하시오.
+
 초기 배열: let todoList = ['장보기', '과제하기'];
 힌트: 배열에 요소를 추가할 때는 .push() 메소드를 사용합니다. */
 
@@ -99,3 +117,27 @@ console.log( todoList );
 */
 
 // todoList = todo;    변수가 하나의 값밖에 저장 못해서 안 됨
+
+/*
+let todoList = [ "장보기" , "과제하기" ];
+let todo = prompt( " 새로운 할 일! ");
+todoList.push( todo );
+console.log ( todoList );
+*/
+
+/* 문제 10: 대기열의 마지막 사람 확인하기
+다음과 같이 대기자 명단이 담긴 waitingList 배열이 있습니다. 
+배열의 마지막에 있는 사람의 이름을 찾아 "마지막 대기자는 [이름]입니다." 
+형식으로 콘솔에 출력하는 프로그램을 작성하시오.
+초기 배열: let waitingList = ['김민준', '이서연', '박도윤', '최지우'];
+힌트: 배열의 마지막 요소 인덱스는 배열.length - 1 입니다.
+*/
+
+/*
+let waitingList = ['김민준', '이서연', '박도윤', '최지우'];
+let lastOne = waitingList.length - 1;
+let lastName = waitingList[`${lastOne}`];
+console.log(` 마지막 대기자는 [${lastName}]입니다. `);
+*/
+
+
