@@ -34,15 +34,15 @@ li {
 
 /* 백그라운드 컬러 */
 #contents1 {
-    background-color: antiquewhite;
+    background-color: #F0FFF0;
 }
 
 #contents2 {
-    background-color: antiquewhite;
+    background-color: #F0FFF0;
 }
 
 #contents3 {
-    background-color: antiquewhite;
+    background-color: #F0FFF0;
 }
 
 
@@ -183,10 +183,12 @@ li {
 
 #contents2 {
     width: 393px;
+   
 }
 
 .H_part {
     padding: 20px;
+    
 }
 
 .title1 {
@@ -323,88 +325,109 @@ li {
 
 .contents2-1 {
     margin-bottom: 30px;
+    background-color: #ffffff;
 }
 
 .contents2-2 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents2-3 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents2-4 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents2-5 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents2-6 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents2-7 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents2-8 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents2-9 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents2-10 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents2-11 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 
 
 .contents3-0 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents3-1 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents3-2 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents3-3 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents3-4 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents3-5 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents3-6 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents3-7 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents3-8 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 .contents3-9 {
     margin-bottom: 30px;
+     background-color: #ffffff;
 }
 
 
