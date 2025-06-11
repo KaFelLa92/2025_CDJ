@@ -93,6 +93,6 @@ let seatList = [ 'O', 'X', 'O' ];
 '예약 불가'를 출력하는 프로그램을 작성하시오.
  */
 
-
-
+let seatList = [ "O" , "X" , "O" ];
+if
 

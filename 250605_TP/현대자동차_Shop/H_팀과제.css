@@ -1,6 +1,14 @@
 /* 구역 사이즈 기준: 컨텐츠+안쪽여백 */
-*{box-sizing: border-box;}
-*{margin : 0px; padding: 0px;} /*기본 여백들을 제거*/
+* {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*기본 여백들을 제거*/
 
 
 /*확인용*/
@@ -11,351 +19,391 @@
 
 /* 공통 부문 */
 
-a{ /*링크 기본값 제거 */
-    text-decoration: none; /* 밑줄제거 */
-    color: black; /* 글꼴 색상 */
+a {
+    /*링크 기본값 제거 */
+    text-decoration: none;
+    /* 밑줄제거 */
+    color: black;
+    /* 글꼴 색상 */
 }
 
 /* ul 또는 ol에서 글머리 제거 */
-li{ list-style-type: none;}
+li {
+    list-style-type: none;
+}
+
+/* 백그라운드 컬러 */
+#contents1 {
+    background-color: antiquewhite;
+}
+
+#contents2 {
+    background-color: antiquewhite;
+}
+
+#contents3 {
+    background-color: antiquewhite;
+}
 
 
 /*====================[스크립트 작성]======================*/
 
 /* wrap : 전체 구역 */
-#wrap{
-    width: 1280px;     /* 웹표준 가로 사이즈 : 1280px */
+#wrap {
+    width: 1280px;
+    /* 웹표준 가로 사이즈 : 1280px */
     margin: 0 auto;
 }
 
 
 /* 본문 */
-#main{
+#main {
+    background-color: honeydew;
     display: flex;
-    flex-wrap: nowrap; /* 크기 자동 맞춤 */
-    flex-direction: row; /* 배치 방향 : 가로 */
-    justify-content: space-between; /* 양쪽에 여백없이 균등정렬 */
+    flex-wrap: nowrap;
+    /* 크기 자동 맞춤 */
+    flex-direction: row;
+    /* 배치 방향 : 가로 */
+    justify-content: space-between;
+    /* 양쪽에 여백없이 균등정렬 */
     align-items: stretch;
     width: 100%;
 }
 
-.H_LOGO{
-    width: 120px; height: 20px;
+.H_LOGO {
+    width: 120px;
+    height: 20px;
     margin: 30px;
- 
+
 }
 
-.H_H{
-    width: 920px; height: 40px;
+.H_H {
+    width: 920px;
+    height: 40px;
     display: flex;
     align-items: center;
-    
+
 }
 
-.Search{
-    width: 400px; height: 40px;
+.Search {
+    width: 400px;
+    height: 40px;
     display: flex;
     align-items: center;
     background-color: #f2f2f2;
     margin: 20px;
 }
 
-#Search_in{
+#Search_in {
     background-color: #f2f2f2;
-    width: 376px; height: 20px;
+    width: 376px;
+    height: 20px;
     padding: 10px;
     margin: 30px;
 }
 
-.H_D{
+.H_D {
     margin: 10px;
 }
 
-.top-menu{
+.top-menu {
     display: flex;
     justify-content: right;
     width: 600px;
 }
 
-.H_login{
-    width: 30px; height: 28px;
+.H_login {
+    width: 30px;
+    height: 28px;
 }
 
-.H_장바구니{
-    width: 30px; height: 30px;
+.H_장바구니 {
+    width: 30px;
+    height: 30px;
 }
 
-.list_menu{
+.list_menu {
     display: flex;
     justify-content: space-between;
-    width: 800px; height: 50px;
+    width: 800px;
+    height: 50px;
     padding: 10px;
     margin: 30px;
 }
 
 
-.H_midle{
+.H_midle {
     text-align: center;
 }
 
-.H_midle > img{
+.H_midle>img {
     padding-left: 25px;
     padding-right: 25px;
 }
 
-.contentsa{
+.contentsa {
     display: flex;
-    width: 393px; height: 393px;
+    width: 393px;
+    height: 393px;
 }
 
-.contentsb{
+.contentsb {
     display: flex;
-    width: 393px; height: 150;
+    width: 393px;
+    height: 150;
 }
 
-.HD{
-    color:#666666
+.HD {
+    color: #666666
 }
 
-.H2{
+.H2 {
     margin: 5px;
     padding: 5px;
 }
 
-.H2_2{
-    width: 80px; height: 80px;
+.H2_2 {
+    width: 80px;
+    height: 80px;
     display: flex;
 }
 
-.H2_3{
-    width: 80px; height: 80px;
+.H2_3 {
+    width: 80px;
+    height: 80px;
     display: flex;
 }
 
-.H2_4{
-    width: 80px; height: 80px;
+.H2_4 {
+    width: 80px;
+    height: 80px;
     display: flex;
 }
 
 
-#contents2{
+#contents2 {
     width: 393px;
 }
 
-.H_part{
+.H_part {
     padding: 20px;
 }
 
-.title1{
+.title1 {
     width: 393px;
 }
 
-.H2_product1{
-    display: flex;
-    width: 393px;
-    padding: 20px;
-}
-
-.H2_product2{
-    display: flex;
-    width: 393px;
-    padding: 20px;
-}
-
-.H2_product3{
+.H2_product1 {
     display: flex;
     width: 393px;
     padding: 20px;
 }
 
-.H2_M{
+.H2_product2 {
+    display: flex;
+    width: 393px;
+    padding: 20px;
+}
+
+.H2_product3 {
+    display: flex;
+    width: 393px;
+    padding: 20px;
+}
+
+.H2_M {
     color: #b6b6BB;
 }
 
-.H2_M1{
+.H2_M1 {
     color: red;
 }
 
-.별{
+.별 {
     display: flex;
-    color:#666666;
+    color: #666666;
 }
 
-.H3_1{
+.H3_1 {
     display: flex;
 }
 
 
 
-.footer-inner{
+.footer-inner {
     width: 1280px;
     margin: 0px auto;
-    background-color:#1F2023; 
+    background-color: #1F2023;
 }
 
-.footer-logo1{
-    width: 123px; height: 24px;
+.footer-logo1 {
+    width: 123px;
+    height: 24px;
     margin: 25px;
     background-color: white;
 }
 
-.footer-info{
+.footer-info {
     display: flex;
     justify-content: space-between;
     margin: 25px;
     padding: 5px;
-    width: 500px; height: 50px;
+    width: 500px;
+    height: 50px;
     color: #9a9a9F;
 }
 
 
-.footer-info2{
+.footer-info2 {
     font-weight: bold;
     color: white;
     display: flex;
     justify-content: space-between;
 }
 
-.footer-info3{
+.footer-info3 {
     font-weight: bold;
     color: #66666b;
     display: flex;
     justify-content: space-between;
 }
 
-.footer-info4{
+.footer-info4 {
     font-weight: bold;
     color: #66666b;
     display: flex;
     justify-content: space-between;
 }
 
-.footer-info5{
+.footer-info5 {
     font-weight: bold;
     color: #66666b;
     display: flex;
     justify-content: space-between;
 }
 
-.footer-info6{
+.footer-info6 {
     font-weight: bold;
     color: #66666b;
     display: flex;
     justify-content: space-between;
 }
 
-.footer-left{
+.footer-left {
     text-align: right;
-    width: 500px; height: 50px;
+    width: 500px;
+    height: 50px;
 
 }
 
-.footer-infoA{
+.footer-infoA {
     margin: 25px;
     color: #66666B;
-    
+
 }
 
-.footer-infoB{
+.footer-infoB {
     margin: 25px;
     color: #66666B;
-  
+
 }
 
-.footer-infoC{
+.footer-infoC {
     margin: 25px;
     color: #66666B;
-  
+
 }
+
 /* 패밀리 사이트 */
-.FMY{
+.FMY {
     text-align: end;
     color: white;
     padding: 40px;
 }
 
-.contents2-1{
+.contents2-1 {
     margin-bottom: 30px;
 }
 
-.contents2-2{
+.contents2-2 {
     margin-bottom: 30px;
 }
 
-.contents2-3{
+.contents2-3 {
     margin-bottom: 30px;
 }
 
-.contents2-4{
+.contents2-4 {
     margin-bottom: 30px;
 }
 
-.contents2-5{
+.contents2-5 {
     margin-bottom: 30px;
 }
 
-.contents2-6{
+.contents2-6 {
     margin-bottom: 30px;
 }
 
-.contents2-7{
+.contents2-7 {
     margin-bottom: 30px;
 }
 
-.contents2-8{
+.contents2-8 {
     margin-bottom: 30px;
 }
 
-.contents2-9{
+.contents2-9 {
     margin-bottom: 30px;
 }
 
-.contents2-10{
+.contents2-10 {
     margin-bottom: 30px;
 }
 
-.contents2-11{
+.contents2-11 {
     margin-bottom: 30px;
 }
 
 
 
-.contents3-0{
+.contents3-0 {
     margin-bottom: 30px;
 }
 
-.contents3-1{
+.contents3-1 {
     margin-bottom: 30px;
 }
 
-.contents3-2{
+.contents3-2 {
     margin-bottom: 30px;
 }
 
-.contents3-3{
+.contents3-3 {
     margin-bottom: 30px;
 }
 
-.contents3-4{
+.contents3-4 {
     margin-bottom: 30px;
 }
 
-.contents3-5{
+.contents3-5 {
     margin-bottom: 30px;
 }
 
-.contents3-6{
+.contents3-6 {
     margin-bottom: 30px;
 }
 
-.contents3-7{
-    margin-bottom: 30px;
-}
-.contents3-8{
+.contents3-7 {
     margin-bottom: 30px;
 }
 
-.contents3-9{
+.contents3-8 {
+    margin-bottom: 30px;
+}
+
+.contents3-9 {
     margin-bottom: 30px;
 }
 
@@ -364,18 +412,18 @@ li{ list-style-type: none;}
 /* ----------------[사진_1라인]-----------------------*/
 
 
-.사진1{
+.사진1 {
     background-image: url("H_ch.jpg");
     width: 393px;
     height: 393px;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    
+
 }
 
 
-.사진1 > p {
+.사진1>p {
     position: absolute;
     bottom: 50px;
     text-align: left;
@@ -387,7 +435,7 @@ li{ list-style-type: none;}
     width: 393px;
 }
 
-.사진1 > span{
+.사진1>span {
     position: absolute;
     bottom: 5px;
     padding: 10px;
@@ -401,18 +449,18 @@ li{ list-style-type: none;}
 
 
 
-.사진2{
+.사진2 {
     background-image: url("H_DA.jpg");
     width: 393px;
     height: 393px;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-   
+
 }
 
 
-.사진2 > p {
+.사진2>p {
     position: absolute;
     bottom: 50px;
     text-align: left;
@@ -424,7 +472,7 @@ li{ list-style-type: none;}
     width: 393px;
 }
 
-.사진2 > span{
+.사진2>span {
     position: absolute;
     bottom: 5px;
     padding: 10px;
@@ -434,18 +482,18 @@ li{ list-style-type: none;}
 
 }
 
-.사진3{
+.사진3 {
     background-image: url("H_MM.jpg");
     width: 393px;
     height: 393px;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-   
+
 }
 
 
-.사진3 > p {
+.사진3>p {
     position: absolute;
     bottom: 50px;
     text-align: left;
@@ -457,7 +505,7 @@ li{ list-style-type: none;}
     width: 393px;
 }
 
-.사진3 > span{
+.사진3>span {
     position: absolute;
     bottom: 5px;
     padding: 10px;
@@ -467,18 +515,18 @@ li{ list-style-type: none;}
 
 }
 
-.사진4{
+.사진4 {
     background-image: url("H_DDD.jpg");
     width: 393px;
     height: 393px;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-   
+
 }
 
 
-.사진4 > p {
+.사진4>p {
     position: absolute;
     bottom: 50px;
     text-align: left;
@@ -490,7 +538,7 @@ li{ list-style-type: none;}
     width: 393px;
 }
 
-.사진4 > span{
+.사진4>span {
     position: absolute;
     bottom: 5px;
     padding: 10px;
@@ -500,18 +548,18 @@ li{ list-style-type: none;}
 
 }
 
-.사진5{
+.사진5 {
     background-image: url("H_DS.jpg");
     width: 393px;
     height: 393px;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-   
+
 }
 
 
-.사진5 > p {
+.사진5>p {
     position: absolute;
     bottom: 50px;
     text-align: left;
@@ -523,7 +571,7 @@ li{ list-style-type: none;}
     width: 393px;
 }
 
-.사진5 > span{
+.사진5>span {
     position: absolute;
     bottom: 5px;
     padding: 10px;
@@ -533,18 +581,18 @@ li{ list-style-type: none;}
 
 }
 
-.사진6{
+.사진6 {
     background-image: url("H_DDDD.jpg");
     width: 393px;
     height: 393px;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-   
+
 }
 
 
-.사진6 > p {
+.사진6>p {
     position: absolute;
     bottom: 50px;
     text-align: left;
@@ -556,7 +604,7 @@ li{ list-style-type: none;}
     width: 393px;
 }
 
-.사진6 > span{
+.사진6>span {
     position: absolute;
     bottom: 5px;
     padding: 10px;
@@ -566,18 +614,18 @@ li{ list-style-type: none;}
 
 }
 
-.사진7{
+.사진7 {
     background-image: url("H_DDDDD.jpg");
     width: 393px;
     height: 393px;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-   
+
 }
 
 
-.사진7 > p {
+.사진7>p {
     position: absolute;
     bottom: 50px;
     text-align: left;
@@ -589,7 +637,7 @@ li{ list-style-type: none;}
     width: 393px;
 }
 
-.사진7 > span{
+.사진7>span {
     position: absolute;
     bottom: 5px;
     padding: 10px;
@@ -599,18 +647,18 @@ li{ list-style-type: none;}
 
 }
 
-.사진8{
+.사진8 {
     background-image: url("H_AAA.jpg");
     width: 393px;
     height: 393px;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-   
+
 }
 
 
-.사진8 > p {
+.사진8>p {
     position: absolute;
     bottom: 50px;
     text-align: left;
@@ -622,7 +670,7 @@ li{ list-style-type: none;}
     width: 393px;
 }
 
-.사진8 > span{
+.사진8>span {
     position: absolute;
     bottom: 5px;
     padding: 10px;
@@ -632,18 +680,18 @@ li{ list-style-type: none;}
 
 }
 
-.사진9{
+.사진9 {
     background-image: url("H_SS.jpg");
     width: 393px;
     height: 393px;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-   
+
 }
 
 
-.사진9 > p {
+.사진9>p {
     position: absolute;
     bottom: 50px;
     text-align: left;
@@ -655,7 +703,7 @@ li{ list-style-type: none;}
     width: 393px;
 }
 
-.사진9 > span{
+.사진9>span {
     position: absolute;
     bottom: 5px;
     padding: 10px;
@@ -665,18 +713,18 @@ li{ list-style-type: none;}
 
 }
 
-.사진10{
+.사진10 {
     background-image: url("H_SSS.jpg");
     width: 393px;
     height: 393px;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-   
+
 }
 
 
-.사진10 > p {
+.사진10>p {
     position: absolute;
     bottom: 50px;
     text-align: left;
@@ -688,7 +736,7 @@ li{ list-style-type: none;}
     width: 393px;
 }
 
-.사진10 > span{
+.사진10>span {
     position: absolute;
     bottom: 5px;
     padding: 10px;
@@ -698,18 +746,18 @@ li{ list-style-type: none;}
 
 }
 
-.사진11{
+.사진11 {
     background-image: url("H_CCC.jpg");
     width: 393px;
     height: 393px;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-   
+
 }
 
 
-.사진11 > p {
+.사진11>p {
     position: absolute;
     bottom: 50px;
     text-align: left;
@@ -721,7 +769,7 @@ li{ list-style-type: none;}
     width: 393px;
 }
 
-.사진11 > span{
+.사진11>span {
     position: absolute;
     bottom: 5px;
     padding: 10px;
@@ -731,18 +779,18 @@ li{ list-style-type: none;}
 
 }
 
-.사진12{
+.사진12 {
     background-image: url("H_TT.jpg");
     width: 393px;
     height: 393px;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-   
+
 }
 
 
-.사진12 > p {
+.사진12>p {
     position: absolute;
     bottom: 50px;
     text-align: left;
@@ -754,7 +802,7 @@ li{ list-style-type: none;}
     width: 393px;
 }
 
-.사진12 > span{
+.사진12>span {
     position: absolute;
     bottom: 5px;
     padding: 10px;
@@ -764,18 +812,18 @@ li{ list-style-type: none;}
 
 }
 
-.사진13{
+.사진13 {
     background-image: url("H_BL.jpg");
     width: 393px;
     height: 393px;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-   
+
 }
 
 
-.사진13 > p {
+.사진13>p {
     position: absolute;
     bottom: 50px;
     text-align: left;
@@ -787,7 +835,7 @@ li{ list-style-type: none;}
     width: 393px;
 }
 
-.사진13 > span{
+.사진13>span {
     position: absolute;
     bottom: 5px;
     padding: 10px;
@@ -797,18 +845,18 @@ li{ list-style-type: none;}
 
 }
 
-.사진14{
+.사진14 {
     background-image: url("H_OO.jpg");
     width: 393px;
     height: 393px;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-   
+
 }
 
 
-.사진14 > p {
+.사진14>p {
     position: absolute;
     bottom: 50px;
     text-align: left;
@@ -820,7 +868,7 @@ li{ list-style-type: none;}
     width: 393px;
 }
 
-.사진14 > span{
+.사진14>span {
     position: absolute;
     bottom: 5px;
     padding: 10px;
