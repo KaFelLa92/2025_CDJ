@@ -19,14 +19,83 @@ console.log( `${ F }`)
 
 격파완료! */
 
+/*문제 3: 나이 계산기
+태어난 년도를 prompt 함수로 입력받아, 2025년 기준 현재 나이를 계산하여 콘솔에 출력하는 프로그램을 작성하시오.
+나이 계산 공식: 2025 - 태어난 년도 */
+
+/* let since = Number( prompt( " 태어난 년도를 작성해주세요." ));
+let old   = 2025 - since;
+console.log( `${ old }`);
+격파완료!  */
+
+/* 문제 4: BMI 지수 계산
+키(cm)와 몸무게(kg)를 각각 prompt 함수로 입력받아 BMI 지수를 계산하여 콘솔에 출력하는 프로그램을 작성하시오.
+BMI 지수 공식: 몸무게(kg) / (키(m) * 키(m))
+*힌트: 키는 cm 단위로 입력받지만, 공식에는 m 단위가 사용됩니다. 키(cm) / 100을 통해 단위를 변환해야 합니다. */
+
+/*
+let height = Number(prompt( " 키(cm)를 작성하시오." ))
+let weight = Number(prompt( " 몸무게(kg)를 작성하시오. "))
+let BMI    = weight / (height * height / 100)
+console.log( `${ BMI }`)
+격파완료! */
+
+/* 문제 5: 관리자 확인
+아이디와 이메일을 prompt 함수로 입력받습니다. 아이디가 'admin'이거나 또는 이메일이 'admin@test.com'이면
+'관리자'를, 그렇지 않으면 '일반 사용자'를 콘솔에 출력하는 프로그램을 작성하시오.
+ */
+
+/*
+let id = prompt( " 아이디를 작성하시오. " )
+let eMail = prompt( " 이메일을 작성하시오. ")
+let admin = (id == "admin" || eMail == 'admin@test.com') ? "관리자" : "일반 사용자"
+console.log( `${ admin }`)
+격파완료! GPT 고마워
+/*
+
+/* 문제 6: 학점 변환기 (HTML 출력)
+100점 만점의 점수를 prompt 함수로 입력받아, 점수에 따라 아래와 같이 등급을 부여하고 HTML 문서에 <h2> 태그로 출력하는 프로그램을 작성하시오.
+90점 이상: 'A'
+80점 이상 90점 미만: 'B'
+70점 미만: 'C'
+ */
+
+/* 실패!
+let score = Number(prompt( "점수를 입력하세요. (최대 100점)" ))
+let scoreA = score >= 90
+let scoreB = 90> score >= 80
+let scoreC = score < 70
+console.log( `${[scoreA , scoreB , scoreC ] }` )
+
+document.write(`<h2> ${ [scoreA , scoreB , scoreC] } </h2>`)
+*/
+
+/*
+let score = Number(prompt( "점수를 입력하세요. (최대 100점)" ))
+let grade = (score >= 90) ? "A" :
+            (score >= 80) ? "B" : "C";
+document.write(`<h2> 당신의 등급은 ${grade}입니다 </h2>`)
+격파완료! GPT야 고마워
+/*
+
+/* 문제 7: 청년 할인 이벤트 대상 확인
+나이를 prompt로 입력받아, 20대 (20세 이상 그리고 29세 이하)에 해당하는 경우 "이벤트 대상입니다."를, 
+그렇지 않으면 "이벤트 대상이 아닙니다."를 콘솔에 출력하는 프로그램을 작성하시오.
+*/
+
+let age     = Number(prompt( "나이를 입력하세요." )
+let generate= (age >= 20 && age <= 29) ? "이벤트 대상입니다." : "이벤트 대상이 아닙니다."
+
+
 /* 문제 9: 할 일 목록에 항목 추가하기
 다음과 같이 할 일 목록이 담긴 todoList 배열이 있습니다. prompt를 사용하여 새로운 할 일을 입력받아 배열의 마지막에 추가한 후, 변경된 배열 전체를 콘솔에 출력하는 프로그램을 작성하시오.
 초기 배열: let todoList = ['장보기', '과제하기'];
 힌트: 배열에 요소를 추가할 때는 .push() 메소드를 사용합니다. */
 
-let todoList = [ "장보기" , "과제하기" ]; // 배열 : [] ,
+/* let todoList = [ "장보기" , "과제하기" ]; // 배열 : [] ,
 let todo = prompt( "새로운 할 일을 입력하세요" );
 todoList.push( todo );
 console.log( todoList );
+*/
 
-// todoList = todo;    변수가 하나의 값밖에 저장 못해서 안 됨.
+// todoList = todo;    변수가 하나의 값밖에 저장 못해서 안 됨
