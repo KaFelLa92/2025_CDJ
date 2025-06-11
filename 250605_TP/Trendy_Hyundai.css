@@ -4,13 +4,12 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Happiness-Sans-Bold';
+    font-family: sans-serif;
 }
 
 a {
     color: black;
     text-decoration-line: none;
-    
 }
 
 li {
@@ -19,37 +18,14 @@ li {
 
 /* 헤더 */
 
-a {
-    text-decoration: none;
-    /* 밑줄제거*/
-    color: black;
-    /*글꼴 색상*/
+
+.header-logo{
+    display: flex;
 }
 
-/* ul 또는 ol에서 글머리 제거*/
-li {
-    list-style: none;
-}
-
-
-
-.n1 {
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-}
-
-#header {
-    position: relative;
-    width: 100%;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.header-logo img {
-    width: 170px;
+.header-logo img{
+    width: 150px;
+    margin-left: 200px;
 }
 
 
@@ -66,9 +42,9 @@ li {
     display: flex;
     justify-content: space-between;
     width: 76.07%;
-}
 
-.header-top-menu1 {
+}
+.header-top-menu1{
     display: flex;
     align-items: center;
     width: 61%;
@@ -76,9 +52,9 @@ li {
     justify-content: space-between;
 }
 
-.header-top-menu1>li {
+.header-top-menu1 > li{
     font-size: 16px;
-    line-height: 20px;
+    line-height: 30px;
     letter-spacing: -.4px;
     color: #000;
     font-family: '현대L';
@@ -91,7 +67,7 @@ li {
     width: clamp(260px, 40%, 340px);
 }
 
-.header-top-util>div {
+.header-top-util >div{
     font-size: 16px;
     line-height: 34px;
     color: #000;
@@ -101,11 +77,10 @@ li {
     white-space: nowrap;
 }
 
-.header-top-util>.i1 {
+.header-top-util > .i1{
     display: flex;
     align-items: center;
 }
-
 .i2::after{
     content: "";
     display: inline-block;
@@ -152,6 +127,7 @@ li {
     margin-right: 1px;
 }
 
+
 .p1-2::before{
     position: absolute;
     display: block;
@@ -161,6 +137,7 @@ li {
     width: 100%;
     top: 0;
 }
+
 
 /* Trendy Hyundai 시작 */
 
@@ -187,7 +164,6 @@ li {
     top: 5%;
     left: 25%;
     transform: translateX(-50%);
-    margin-left: 80px;
 }
 
 .th-nav>li {
@@ -216,9 +192,9 @@ li {
     color: white;
     position: absolute;
     left: 50%;
-    top: 15%;
+    top: 20%;
     transform: translateX(-50%);
-    font-size: 25px;
+    font-size: 20px;
     font-weight: normal;
 }
 
@@ -226,9 +202,9 @@ li {
     color: white;
     position: absolute;
     left: 50%;
-    top: 20%;
+    top: 25%;
     transform: translateX(-50%);
-    font-size: 50px;
+    font-size: 45px;
 }
 
 .th-login {
@@ -246,7 +222,7 @@ li {
     border: 2px rgba(255, 255, 255, 0) solid;
     gap: 300px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    margin-top: 80px;
+    margin-top: 100px;
 }
 
 .th-loginText {
@@ -1326,15 +1302,14 @@ li {
     gap: 30px;
 }
 
-.th-endEvent,
-.th-endEvent2 {
+.th-endEvent , .th-endEvent2{
     text-align: center;
     justify-content: center;
     align-items: center;
     margin-bottom: 100px;
-}
+} 
 
-.th-endSpan {
+.th-endSpan{
     margin-top: 100px;
     margin-bottom: 100px;
 }
@@ -1343,15 +1318,14 @@ li {
     vertical-align: middle;
 }
 
-.th-endEvent span::after {
+.th-endEvent span::after{
     content: "|";
     font-size: 20px;
     margin-left: 30px;
     color: #6c6c6c;
 }
 
-/* 이하 푸터 & 챗봇 */
-
+/* 푸터 */
 #footer {
     width: 100%;
     background-color: #1c1b1b;
@@ -1396,12 +1370,9 @@ li {
     /* 텍스트 색상 */
     font-size: 14px;
 }
-
-.menu1 a,
-.menu2 a {
+.menu1 a , .menu2 a{
     color: #999;
 }
-
 .menu1>div:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -1418,7 +1389,7 @@ li {
     /* 선 색상 (#fff, #ccc 등 원하는 색으로) */
 }
 
-#menu1-1>a {
+#menu1-1 >a{
     color: #fff;
 
 }
@@ -1554,34 +1525,34 @@ li {
 }
 
 
-#chatbot {
+#chatbot{
     position: fixed;
     right: 40px;
     z-index: 500;
     bottom: 80px;
 }
-
 .chatbot-1 {
-    position: relative;
-    width: 60px;
-    height: 60px;
+  position: relative;
+  width: 60px;
+  height: 60px;
 }
 
 .chatbot-2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
-    /* 기본 상태: SVG + 컬러 */
-    background: url('https://www.hyundai.com/static/images/common/button/h_fab_default.svg') center center no-repeat;
-    background-size: contain;
-    background-color: #00aad2;
-    border-radius: 50%;
+  /* 기본 상태: SVG + 컬러 */
+  background: url('https://www.hyundai.com/static/images/common/button/h_fab_default.svg') 
+              center center no-repeat;
+  background-size: contain;
+  background-color: #00aad2;
+  border-radius: 50%;
 }
 
 /* 클릭(active) 시에는 배경 이미지를 없애고 컬러만 보이게 */
 .chatbot-2:active {
-    background: #00aad2;
+  background: #00aad2;
 }
