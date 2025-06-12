@@ -100,11 +100,13 @@ X일 경우 예약 성공
 
 시트리스트의 차이점 확인
 좌석 번호를 받기
-if문에서 seatList[index] 입력 후, 조건 만족하는지 확인하여 처리.
+if문에서 seatList[indexNumber] 입력 후, 조건 만족하는지 확인하여 처리.
 */
+
 /*
-let seatList = ["O", "X", "O"];
+let seatList = ["O", "X", "O"]; // (1) 배열은 여러 자료를 하나의 자료로 묶는 것.
 let reserveIndex = Number(prompt(" 예약할 좌석 번호를 입력하세요 "));
+// reserveIndex를 index번호로 가정하는 것. 
 if (seatList[reserveIndex] == "X") {
     console.log(`예약 성공`);
 }
@@ -115,6 +117,7 @@ else {
     console.log(`없는 좌석입니다.`);
 }
 */
+
 
 /* 문제 6: 점수에 따른 상품 지급
 게임 점수를 정수로 입력받아, 
@@ -127,10 +130,15 @@ else {
 
 /*
 let score = parseInt(prompt(" 점수 입력하세요 "))
-if (score >= 900) {console.log ("A급 경품")}
-else if(score >=700) {console.log ("B급 경품")}
-else if(score >=500) {console.log ("C급 경품")}
-else{console.log ("참가상")}
+if (score >= 900) {
+    console.log ("A급 경품")
+}else if(score >= 700) {
+    console.log ("B급 경품")    // if가 아닌 else if라서 && score < 900을 생략할 수 있다. 
+}else if(score >= 500) {
+    console.log ("C급 경품")
+}else{
+    console.log ("참가상")
+}
 */
 
 /*
@@ -145,10 +153,16 @@ viewer: '콘텐츠 조회만 가능합니다.'
 
 /*
 let role = prompt(" 당신의 역할을 입력하세요. ")
-if (role == "admin" || role == "관리자") { console.log("모든 기능에 접근할 수 있습니다."); }
-else if (role == "editor" || role == "편집자") { console.log("콘텐츠 수정 및 생성 기능에 접근할 수 있습니다. "); }
-else if (role == "viewer" || role == "시청자") { console.log(`콘텐츠 조회만 가능합니다. `); }
-else { console.log("정의되지 않은 역할입니다."); }
+if (role == "admin" || role == "관리자") {
+    console.log("모든 기능에 접근할 수 있습니다.");
+} else if (role == "editor" || role == "편집자" || role == "매니저") {
+    console.log("콘텐츠 수정 및 생성 기능에 접근할 수 있습니다. ");
+} else if (role == "viewer" || role == "시청자" || role == "열람자") {
+    console.log(`콘텐츠 조회만 가능합니다. `);
+} else {
+    console.log("정의되지 않은 역할입니다.");
+
+}
 */
 
 
@@ -202,6 +216,7 @@ if (score >= 90) {
 해당하는 음료 이름과 가격을 '선택하신 음료는 [음료이름]입니다. 가격은 [가격]원입니다.' 
 형식으로 출력하세요. 만약 목록에 없는 번호를 입력하면 '없는 상품입니다.'라고 출력하는 프로그램을 작성하시오.
  */
+
 
 let drinkNames = ['콜라', '사이다', '커피'];
 let drinkPrices = [1000, 1000, 1500];
