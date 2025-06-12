@@ -1,0 +1,244 @@
+/* 폰트 */
+
+/* 낭만있구미체 */
+@font-face {
+    font-family: 'GumiRomanceTTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/GumiRomanceTTF.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 구미첨단산업체 */
+@font-face {
+    font-family: 'GumiIndustryTTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/GumiIndustryTTF.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 구미돋움체 */
+@font-face {
+    font-family: 'GumiDotumTTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/GumiDotumTTF.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 전체 */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+a {
+    color: black;
+    text-decoration-line: none;
+}
+
+li {
+    list-style: none;
+}
+
+/* 이하 반응형 */
+
+/* 기본 스타일: PC용 */
+
+body {
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+/* 태블릿용: 가로폭 1024px 이하 */
+@media (max-width: 1024px) {
+    body {
+        font-size: 16px;
+        width: 90%;
+    }
+}
+
+/* 모바일용: 가로폭 768px 이하 */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        width: 95%;
+        flex-direction: column;
+    }
+}
+
+/* 헤더 시작 */
+
+#head {
+    background-color: #020126;
+    width: 100%;
+    height: 150px;
+    position: fixed;
+}
+
+.headContain {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headLog img {
+    width: 150px;
+}
+
+.headLog img:hover {
+    content: url("./img/logo2.png");
+}
+
+.headNav ul {
+    display: flex;
+    flex-wrap: wrap;
+    /* 추가 */
+    justify-content: space-between;
+    /* 우측 정렬 */
+}
+
+.headNav li a {
+    font-family: 'GumiRomanceTTF';
+    font-size: 30px;
+    color: #bbbf49;
+    margin-left: 50px;
+}
+
+.headNav li a:hover {
+    color: #edf252;
+}
+
+/* 헤더 반응형 */
+
+@media (max-width: 768px) {
+    .headNav li {
+        margin-left: 20px;
+    }
+
+    .headNav {
+        width: 100%;
+    }
+
+    .headNav ul {
+        font-size: 18px;
+        margin-left: 20px;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .headNav li a {
+        font-size: 12px;
+        margin: 0 auto;
+    }
+}
+
+/* 헤더 종료 */
+
+/* 히어로섹션 시작 */
+#hero {
+    padding-top: 150px;
+    height: 900px;
+    background-color: #EDF252;
+}
+
+.heroImg {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.heroImg img {
+    width: 50%;
+    max-width: 480px;
+}
+
+.heroTitle p {
+    text-align: center;
+    font-size: 60px;
+    font-family: 'GumiRomanceTTF';
+    color: #020126;
+    word-break: keep-all;
+    padding: 0 20px;
+}
+
+/* 히어로섹션 반응형*/
+
+/* 태블릿 */
+@media (max-width: 1024px) {
+    .heroTitle p {
+        font-size: 50px;
+    }
+
+    .heroImg img {
+        width: 60%;
+    }
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+    .heroTitle p {
+        font-size: 40px;
+    }
+
+    .heroImg img {
+        width: 80%;
+    }
+}
+
+/* 히어로섹션 끝 */
+
+/* 본문 컨테이너 */
+#container {
+    width: 100%;
+    height: 8000px;
+    background-color: #bbbf49;
+}
+
+
+/* 본문 콘텐츠 시작 */
+#main {
+    max-width: 1280px;
+    height: 8000px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    border: 3px solid #edf252;
+}
+
+.mainTitle {
+    margin-bottom: 20px; 
+    border-bottom: 1px solid #bbbf49;
+    font-family: 'GumiIndustryTTF';
+    font-size: 40px;
+}
+
+
+
+/* 푸터 시작 */
+
+#foot {
+    background-color: #020126;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footCopy {
+    font-family: 'GumiRomanceTTF';
+    font-size: 30px;
+    color: #bbbf49;
+}
+
+.footSince {
+    font-family: 'GumiRomanceTTF';
+    font-size: 30px;
+    color: #bbbf49;
+}
+
+
+/* 푸터 종료 */
