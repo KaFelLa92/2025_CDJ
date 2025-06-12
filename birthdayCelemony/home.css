@@ -55,7 +55,8 @@ body {
 @media (max-width: 1024px) {
     body {
         font-size: 16px;
-        width: 90%;
+        width: 95%;
+        margin: 0 auto;
     }
 }
 
@@ -64,6 +65,8 @@ body {
     body {
         font-size: 14px;
         width: 95%;
+        margin: 0 auto;
+        display: flex;
         flex-direction: column;
     }
 }
@@ -75,6 +78,7 @@ body {
     width: 100%;
     height: 150px;
     position: fixed;
+    z-index: 1000;
 }
 
 .headContain {
@@ -112,9 +116,45 @@ body {
     color: #edf252;
 }
 
+.headNav li a:active {
+    font-size: 170%;
+}
+
 /* 헤더 반응형 */
 
+@media (max-width: 1024px) {
+    #head {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .headNav li {
+        margin-left: 20px;
+    }
+
+    .headNav {
+        width: 95%;
+    }
+
+    .headNav ul {
+        margin-left: 20px;
+        align-items: flex-end;
+    }
+
+    .headNav li a {
+        font-size: 14px;
+        margin: 0 auto;
+    }
+}
+
+
+
 @media (max-width: 768px) {
+    #head {
+        width: 95%;
+        margin: 0 auto;
+    }
+
     .headNav li {
         margin-left: 20px;
     }
@@ -155,6 +195,10 @@ body {
     max-width: 480px;
 }
 
+.heroImg img:hover {
+    content: url(./img/heroImgHover.png);
+}
+
 .heroTitle p {
     text-align: center;
     font-size: 60px;
@@ -193,7 +237,6 @@ body {
 /* 본문 컨테이너 */
 #container {
     width: 100%;
-    height: 8000px;
     background-color: #bbbf49;
 }
 
@@ -201,21 +244,216 @@ body {
 /* 본문 콘텐츠 시작 */
 #main {
     max-width: 1280px;
-    height: 8000px;
     width: 90%;
     margin: 0 auto;
+    padding: 100px;
     background-color: white;
     border: 3px solid #edf252;
 }
 
+.mainAbout {
+    margin-top: 50px;
+    text-align: center;
+}
+
 .mainTitle {
-    margin-bottom: 20px; 
-    border-bottom: 1px solid #bbbf49;
+    margin-bottom: 50px;
     font-family: 'GumiIndustryTTF';
-    font-size: 40px;
+    font-size: 200%;
+    color: #0D0D0D;
+    position: relative;
+    text-align: center;
+}
+
+.mainTitle::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35%;
+    /* 고정 길이 */
+    height: 3px;
+    background-color: #bbbf49;
+    /* 청록색 */
+}
+
+.mainText {
+    font-family: 'GumiDotumTTF';
+    font-size: 20px;
+    color: #0D0D0D;
+}
+
+.subText {
+    font-family: 'GumiDotumTTF';
+    font-size: 16px;
+    color: #737373;
+}
+
+/* 본문 특파원소개 시작 */
+
+.aboutBox {
+    background-color: #edf252;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #BBBF49;
+    box-shadow: 0 8px 16px #737373;
+    border-radius: 10px;
+    width: 100%;
+    height: 600px;
+    margin: 100px 0;
+}
+
+.aboutBox:hover {
+    background-color: #BBBF49;
+}
+
+.aboutImg {
+    width: 50%;
+    text-align: center;
+}
+
+.aboutImg img {
+    width: 90%;
+    border-radius: 10px;
+}
+
+.aboutText {
+    width: 50%;
+}
+
+.aboutText ul {
+    text-align: center;
+}
+
+.mainBtn {
+    font-size: 20px;
+    color: #edf252;
+    background-color: #020126;
+    border: 0;
+    width: 200px;
+    height: 60px;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px #737373;
+    margin-bottom: 100px;
+}
+
+.mainBtn:hover {
+    font-weight: bold;
+    color: #0D0D0D;
+    background-color: #bbbf49;
+    border: 2px solid #737373;
+}
+
+.mainBtn:active {
+    background-color: #EDF252;
+}
+
+/* 본문 반응형 */
+
+@media (max-width: 1024px) {
+
+    .mainTitle {
+        margin-bottom: 30px;
+        font-family: 'GumiIndustryTTF';
+        font-size: 200%;
+        color: #0D0D0D;
+        position: relative;
+        text-align: center;
+    }
+
+    .mainText {
+        font-family: 'GumiDotumTTF';
+        font-size: 100%;
+        color: #0D0D0D;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainAbout {
+        padding: 50px 20px;
+    }
+
+    .aboutBox {
+        flex-direction: column;
+        height: auto;
+        padding: 50px;
+        gap: 50px;
+    }
+
+    .aboutImg,
+    .aboutText {
+        width: 100%;
+        text-align: center;
+    }
+
+    .aboutImg img {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .mainTitle::after {
+        width: 100%;
+        /* 고정 길이 제거 */
+        max-width: 300px;
+    }
+}
+
+/* 특파원소개 종료 */
+
+/* 뉴스 시작 */
+.news {
+    text-align: center;
+}
+
+.newsBox {
+    background-color: #edf252;
+    border: 3px solid #BBBF49;
+    box-shadow: 0 8px 16px #737373;
+    border-radius: 10px;
+    width: 100%;
+    margin: 100px 0;
 }
 
 
+.newsCols {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.newsThumb {
+    padding-top: 20px;
+    width: 100%;
+}
+
+.newsThumb:hover {
+    background-color: #BBBF49;
+    border-radius: 20px;
+}
+
+.newsThumb .mainText,
+.newsThumb .subText {
+    width: 100%;
+    padding: 0 15px;
+    text-align: left;
+    gap: 10px;
+}
+
+.newsColsImg img {
+    width: 90%;
+    border-radius: 10px;
+}
+
+.dollHover:hover{
+    content: url(./img/doll3.webp);
+}
+
+.dollHover:active{
+    content: url(./img/doll2.webp);
+}
 
 /* 푸터 시작 */
 
@@ -223,22 +461,66 @@ body {
     background-color: #020126;
     width: 100%;
     height: 300px;
+}
+
+.footContain {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+    /* 줄바꿈 허용 */
+    text-align: center;
+    max-width: 1280px;
+    height: 300px;
+    margin: 0 auto;
 }
 
-.footCopy {
-    font-family: 'GumiRomanceTTF';
-    font-size: 30px;
-    color: #bbbf49;
-}
-
+.footCopy,
 .footSince {
     font-family: 'GumiRomanceTTF';
     font-size: 30px;
     color: #bbbf49;
 }
 
+/* 푸터 반응형*/
+
+@media (max-width: 1024px) {
+    #foot {
+        flex-direction: column;
+        width: 100%;
+        padding: 40px 0;
+    }
+
+    .footContain {
+        height: auto;
+    }
+
+    .footCopy,
+    .footSince {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+}
+
+
+/* 모바일용: 가로폭 768px 이하 */
+@media (max-width: 768px) {
+    #foot {
+        flex-direction: column;
+        height: auto;
+        padding: 30px 0;
+    }
+
+    .footContain {
+        height: auto;
+    }
+
+    .footCopy,
+    .footSince {
+        font-size: 18px;
+        margin: 10px 0;
+        line-height: 1.4;
+    }
+}
 
 /* 푸터 종료 */
