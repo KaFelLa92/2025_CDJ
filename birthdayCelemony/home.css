@@ -138,7 +138,7 @@ body {
 
     .headNav ul {
         margin-left: 20px;
-        align-items: flex-end;
+
     }
 
     .headNav li a {
@@ -147,8 +147,6 @@ body {
     }
 }
 
-
-
 @media (max-width: 768px) {
     #head {
         height: 120px;
@@ -156,17 +154,17 @@ body {
     }
 
     .headContain {
-        width: 95%;
+        width: 90%;
         flex-direction: column;
         justify-content: center;
-    }
+      }
 
     .headNav li {
         margin-left: 20px;
     }
 
     .headNav {
-        width: 100%;
+        width: 110%;
         order: 2;
     }
 
@@ -192,7 +190,6 @@ body {
 /* 히어로섹션 시작 */
 #hero {
     padding-top: 150px;
-    height: 900px;
     background-color: #EDF252;
 }
 
@@ -216,7 +213,7 @@ body {
     font-family: 'GumiRomanceTTF';
     color: #020126;
     word-break: keep-all;
-    padding: 0 20px;
+    padding: 5% 20px;
 }
 
 /* 히어로섹션 반응형*/
@@ -257,7 +254,7 @@ body {
     max-width: 1280px;
     width: 90%;
     margin: 0 auto;
-    padding: 100px;
+    padding: 5%;
     background-color: white;
     border: 3px solid #edf252;
 }
@@ -291,7 +288,7 @@ body {
 
 .mainText {
     font-family: 'GumiDotumTTF';
-    font-size: 20px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     color: #0D0D0D;
 }
 
@@ -301,7 +298,7 @@ body {
 
 .subText {
     font-family: 'GumiDotumTTF';
-    font-size: 16px;
+    font-size: clamp(0.5rem, 2vw, 1rem);
     color: #737373;
 }
 
@@ -315,8 +312,7 @@ body {
     border: 3px solid #BBBF49;
     box-shadow: 0 8px 16px #737373;
     border-radius: 10px;
-    width: 100%;
-    height: 600px;
+    min-height: 600px;
     margin: 100px 0;
 }
 
@@ -391,11 +387,11 @@ body {
 
     .mainText {
         font-family: 'GumiDotumTTF';
-        font-size: 70%;
+        font-size: 80%;
         color: #0D0D0D;
     }
 
-    .mainText li{
+    .mainText li {
         font-family: 'GumiDotumTTF';
         font-size: 100%;
         color: #0D0D0D;
@@ -427,7 +423,7 @@ body {
 
     .mainText {
         font-family: 'GumiDotumTTF';
-        font-size: 60%;
+        font-size: clamp(1rem, 2vw, 3rem);
         color: #0D0D0D;
         text-align: center;
         word-break: normal;
@@ -437,7 +433,7 @@ body {
 
     .subText {
         font-family: 'GumiDotumTTF';
-        font-size: 60%;
+        font-size: clamp(0.5rem, 2vw, 2.5rem);
         color: #737373;
         text-align: center;
         word-break: normal;
@@ -573,6 +569,7 @@ body {
 /* 푸터 종료 */
 
 /* 초소형 모바일 반응형 : 480px 이하 */
+
 @media (max-width: 480px) {
     .heroTitle p {
         font-size: 28px;
@@ -582,20 +579,20 @@ body {
         font-size: 130%;
     }
 
-    .mainText {
-        font-size: 14px;
+     .subText {
+        font-size: clamp(0.5rem, 2vw, 2.5rem);
     }
 
-    .mainText li {
-        font-size: 13px;
+    .headNav ul {
+        text-align: center;
     }
 
-    .subText {
-        font-size: 12px;
+    .headNav li {
+        margin: 0 auto;
     }
 
     .headNav li a {
-        font-size: 12px;
+        font-size: 60%;
         margin: 0 3px;
     }
 
