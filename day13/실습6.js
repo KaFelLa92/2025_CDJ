@@ -223,7 +223,8 @@ console.log(numbers);
 /*
 문제 7: 재고 관리 시스템
 두 개의 배열 products(상품 목록)와 stock(재고 수량)이 있습니다. 
-사용자로부터 구매할 상품명과 수량을 입력받아, 재고가 충분하면 "구매 완료!"를 출력하고 재고를 차감하세요. 
+사용자로부터 구매할 상품명과 수량을 입력받아, 
+재고가 충분하면 "구매 완료!"를 출력하고 재고를 차감하세요. 
 재고가 부족하면 "재고가 부족합니다."를 출력합니다.
 let products = ['볼펜', '노트', '지우개'];
 let stock = [10, 5, 20];
@@ -244,19 +245,44 @@ let stock = [10, 5, 20];
 
 */
 
+/*
 let products = ['볼펜', '노트', '지우개'];
 let stock = [10, 5, 20];
 
 let checkP = prompt("구매할 제품을 입력하세요.")
 let checkS = parseInt(prompt("구매할 수량을 입력하세요."))
 
+for (let index = 0; index <= products.length - 1; index++) {
+    let product = products[index]; // index번 째 제품 1개 호출
+    if (product == checkP) { // 만약 index번째 제품명과 입력받은 제품명과 같으면
+        console.log("존재하는 제품명");
+        if (stock[index] >= checkS) { // 만약에 index번째 재고가 입력받은 수량보다 더 크면
+            stock[index] -= checkS; // index번째 재고를 입력받은 수량만큼 차감한다.
+            console.log('구매 완료!');
+        } else {
+            console.log("재고가 부족합니다.");
+        }
+    } else {
+        console.log("없는 제품입니다.");
+    }   // if end
+}   // for end
+*/
+
+/*
+if (product.indexOf( '볼펜' ) != -1 ) {
+    if( stock[ ] >= 5 ){
+    }
+}   
+    제품 목록에 입력받은 값을 찾고, 모든 제품을 순회함.
+*/
+/*
 for (let index1 = 0; index1 <= products.length - 1; index1++) {
     products.indexOf(index1) == checkP  // 체크P가 프로덕트의 내용을 포함하는가?
 } for (let index2 = 0; index2 <= stock.length - 1; index2++) {
     checkS < stock[index2] // 체크S가 스톡보다 적은가?
     if()
 }
-
+*/
 
 
 /*
@@ -278,6 +304,21 @@ for 반복문을 사용하여 모든 영화를 순회합니다.
 청설            ★★★★★★☆☆☆☆
 */
 
+/* 
+
+히든페이스 8번 반복     
+위키드 4번 반복
+
+빈별 계산은 10 - movieRatings
+
+
+*/
+
+let movieNames = ['히든페이스', '위키드', '글래디에이터2', '청설'];
+let movieRatings = [8, 4, 7, 6];
+
+
+
 
 
 /*
@@ -297,6 +338,14 @@ for 반복문을 사용하여 6개의 좌석을 모두 출력합니다.
 빈좌석 예약석   
 예약석 빈좌석
 예약석 빈좌석
+*/
+
+/* 
+let seatStatus = ['빈좌석', '예약석', '예약석', '빈좌석', '예약석', '빈좌석'];
+for ( let index = 0 ; index <= seatStatus.length ; index++ ) {
+    let seat 
+}
+
 */
 
 
