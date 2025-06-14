@@ -351,23 +351,9 @@ body {
 /* 특파원 소개 상세 페이지 시작*/
 
 
-
-.aboutBox2 {
-    background-color: #edf252;
-    border: 3px solid #BBBF49;
-    box-shadow: 0 8px 16px #737373;
-    border-radius: 10px;
-    min-height: 200px;
-
-}
-
-.aboutBox2 .mainTitle {
-    bottom: 40%;
-}
-
 .aboutBoxJS {
     margin: 0;
-    height: 100vh;
+    height: 50vh;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -377,10 +363,8 @@ body {
 
 .aboutFloatDiv {
     position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
+    width: 100vw;
+    height: 100vw;
 }
 
 .aboutFloatBox {
@@ -391,7 +375,7 @@ body {
     padding: 20px 30px;
     font-family: 'GumiRomanceTTF';
     background-color: #edf252;
-    border: 3px solid #020126;
+    border: 2px solid #020126;
     color: #0D0D0D;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
