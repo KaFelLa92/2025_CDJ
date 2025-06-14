@@ -554,7 +554,7 @@ body {
 .fanDear {
     margin: 3vw 0;
     font-family: 'GumiRomanceTTF';
-    font-size: clamp(0.8rem, 3vw, 1.8rem);
+    font-size: clamp(0.5rem, 2.5vw, 1.8rem);
     color: #0D0D0D;
 }
 
