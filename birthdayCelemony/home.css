@@ -77,6 +77,7 @@ body {
     background-color: #020126;
     width: 100%;
     height: 150px;
+    min-height: 150px;
     position: fixed;
     z-index: 1000;
 }
@@ -107,7 +108,7 @@ body {
 
 .headNav li a {
     font-family: 'GumiRomanceTTF';
-    font-size: 30px;
+    font-size: 1.6vw;
     color: #bbbf49;
     margin-left: 50px;
 }
@@ -117,7 +118,7 @@ body {
 }
 
 .headNav li a:active {
-    font-size: 170%;
+    font-size: 150%;
 }
 
 /* 헤더 반응형 */
@@ -347,6 +348,62 @@ body {
     text-align: center;
 }
 
+/* 특파원 소개 상세 페이지 시작*/
+
+
+
+.aboutBox2 {
+    background-color: #edf252;
+    border: 3px solid #BBBF49;
+    box-shadow: 0 8px 16px #737373;
+    border-radius: 10px;
+    min-height: 200px;
+
+}
+
+.aboutBox2 .mainTitle {
+    bottom: 40%;
+}
+
+.aboutBoxJS {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.aboutFloatDiv {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+}
+
+.aboutFloatBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 30px;
+    font-family: 'GumiRomanceTTF';
+    background-color: #edf252;
+    border: 3px solid #020126;
+    color: #0D0D0D;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    font-size: clamp(0.5rem, 2.5vw, 1.8rem);
+    transition: transform 0.1s ease-out;
+    pointer-events: none;
+    /* 박스 위에서 커서 막히지 않게 */
+}
+
+/* 특파원 소개 상세 페이지 끝 */
+
+
 .mainrows {
     display: flex;
     justify-content: center;
@@ -407,6 +464,10 @@ body {
         font-family: 'GumiDotumTTF';
         font-size: 100%;
         color: #0D0D0D;
+    }
+
+    .newsContain {
+        flex-direction: column;
     }
 }
 
@@ -497,8 +558,28 @@ body {
 }
 
 .newsColsImg img {
-    width: 90%;
+    width: 80%;
+    min-width: 10vw;
     border-radius: 10px;
+}
+
+.newsContain {
+    display: flex;
+}
+
+.newsContain .newsColsImg img {
+    min-width: 20vw;
+}
+
+.newsTextBox {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.newsTextBox .mainText,
+.newsTextBox .subText {
+    display: inline-block !important;
 }
 
 /* 양배추 인형 깜짝쇼 */
@@ -675,6 +756,11 @@ body {
 
     .mainBtn {
         width: 70%;
+    }
+
+    .newsTextBox .mainText {
+        margin-top: 20vmin;
+        padding-top: 30vmin;
     }
 
     .newsThumb .mainText {
