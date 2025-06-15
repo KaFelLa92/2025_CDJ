@@ -2,8 +2,18 @@
 문제 1: 배열에서 최댓값 찾기
 주어진 숫자 배열에서 가장 큰 값을 찾아 콘솔에 출력하는 프로그램을 작성하시오. (단, Math.max() 함수 사용 금지)
 let numbers = [23, 5, 67, 12, 88, 34];
+
 */
 
+/*
+max = 0;
+let numbers = [23, 5, 67, 12, 88, 34];
+for (let i = 0; i <= numbers.length - 1; i++) {
+    if (numbers[i] > max) {
+        max = numbers[i]
+    }
+} console.log(max)
+*/
 
 //  내 논리 방식 : 인덱스 값을 서로 비교해서, 작은 수를 스플라이스 하고 큰 수만 남긴 후 출력한다.
 
@@ -43,12 +53,34 @@ console.log(`제일 큰 수는 ${max}입니다.`)
 /*
 문제 2: 별 찍기 (기본 역삼각형)
 for 중첩 반복문을 사용하여 아래와 같은 모양의 별을 출력하시오.
-            라인    별          별 숫자
+            라인    별          라인마다 별 숫자
 *****       1       5           6 - line
 ****        2       4
 ***         3       3
 **          4       2
 *           5       1
+첫 반복 
+*/
+
+/*
+let output = ""; // 별을 찍을 빈 문자열 생성
+for (let line = 1; line <= 5; line++) { // 라인은 1부터 5까지 
+    for (let star = 1; star <= 6 - line; star++) { // 스타는 5부터 1까지
+        output = output + "*"; // 별 문자열 생성
+    }
+    output = output + "\n"; // 이스케이프문자는 line마다 (한 칸 내리기)
+}
+console.log(output)
+*/
+
+/*
+let output = "";
+for (let line = 1; line <= 5; line++) {
+    for (let star = 1; star <= 6 - line; star++) {
+        output = output + "*";
+    }
+    output = output + "\n";
+} console.log(output);
 */
 
 /*  (1) 단*마다 곱*을 출력하는가? 곱마다 단을 출력하는가.
@@ -79,6 +111,34 @@ console.log(output);
 해당 사용자의 이름을 출력하고 반복문을 종료하시오.
 let userNames = ['김하준', '이서아', '박솔민', '최도윤'];
 힌트: 문자열의 .indexOf() 메소드를 사용하세요.
+        하나씩 꺼내기 / 이름에 솔 포함되는지 확인하기
+김하준
+이서아
+박솔민
+최도윤
+
+
+배열에서 이름 찾기 + 출력 후 종료
+*/
+
+let userNames = ['김하준', '이서아', '박솔민', '최도윤'];
+for (i = 0; i <= userNames.length - 1; i++) {
+    if (userNames[i].indexOf("솔") != -1) {
+        console.log(userNames[i])
+    }
+}
+
+
+
+/*
+let userNames = ['김하준', '이서아', '박솔민', '최도윤'];
+
+for (i = 0; i <= userNames.length - 1; i++) {
+    let name = userNames[i]
+    if (name.indexOf("솔") != -1) {
+        console.log(name)
+    }
+}
 */
 
 /*
@@ -117,21 +177,50 @@ let seatLayout = [['A1', 'A2', 'A3'], ['B1', 'B2', 'B3'], ['C1', 'C2', 'C3']];
 
 /*
 let seatLayout = [['A1', 'A2', 'A3'], ['B1', 'B2', 'B3'], ['C1', 'C2', 'C3']];
+
+let seat1 = seatLayout[0]
+let seat2 = seatLayout[1]
+let seat3 = seatLayout[2]
+
+console.log(seat1, seat2, seat3);
+
+for (let i = 0; i <= seatLayout.length - 1; i++) {
+    for (let i = 0; i <= seat1.length - 1; i++) {
+        console.log(seat1[i]);
+    }
+    for (let i = 0; i <= seat2.length - 1; i++) {
+        console.log(seat1[2]);
+    } for (let i = 0; i <= seat3.length - 1; i++) {
+    }
+
+    
+}
+
+
+
+*/
+
+
+
+
+
+
+let seatLayout = [['A1', 'A2', 'A3'], ['B1', 'B2', 'B3'], ['C1', 'C2', 'C3']];
 let seat1 = seatLayout[0] // ['A1', 'A2', 'A3']
 let seat2 = seatLayout[1] // ['B1', 'B2', 'B3']
 let seat3 = seatLayout[2] // ['C1', 'C2', 'C3']
 
-for (let index = 0; index <= seatLayout.length - 1; index++) {
-    // 행 출력
-    let row = seatLayout[index];
-    // console.log(row)
-    // 열 출력
+for (let i = 0; i <= seatLayout.length - 1; i++) {
+    // 행 출력 
+    let row = seatLayout[i];
+    // console.log(row) 
+    // 세로열 출력 (가로 가로 가로) 세로로 넘어가기 (가로 가로 가로)
     for (let j = 0; j <= row.length - 1; j++) {
         let column = row[j];
-        console.log ( column );
+        console.log(column);
     }
 }
-    */
+
 
 
 
@@ -314,10 +403,11 @@ for 반복문을 사용하여 모든 영화를 순회합니다.
 
 */
 
+/*
 let movieNames = ['히든페이스', '위키드', '글래디에이터2', '청설'];
 let movieRatings = [8, 4, 7, 6];
 
-
+*/
 
 
 
