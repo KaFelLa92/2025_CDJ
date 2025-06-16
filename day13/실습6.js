@@ -395,19 +395,44 @@ for 반복문을 사용하여 모든 영화를 순회합니다.
 청설            ★★★★★★☆☆☆☆ star2 == 10 - star1 
 */
 
-let movieNames = ['히든페이스', '위키드', '글래디에이터2', '청설']; // 행을 먼저 넣고
-let movieRatings = [8, 4, 7, 6];    // 열에서 찬 별 넣고 빈 별 넣고
-output = "";
+/*
+let movieNames = ['히든페이스', '위키드', '글래디에이터2', '청설'];
+let movieRatings = [8, 4, 7, 6];
 
 for (i = 0; i <= movieNames.length - 1; i++) {
-
-    let stars = ""; // 별 넣을 변수
-
-    for (r = 0; r <= movieRatings[i].length - 1; r++) {
-        stars + stars + "★";
-        console.log(stars)
+    stars = ""; // 별 넣을 변수
+    rate = movieRatings[i]; // 길이가 같아서 인덱스 공유 가능 , 
+    for (r = 0; r <= rate - 1; r++) {
+        stars = stars + "★";
+    } for (s = 0; s <= (10 - rate) - 1; s++) {
+        stars = stars + "☆";
     }
+
+    console.log(movieNames[i] + "\t" + stars);
 }
+    */
+
+
+/*
+let movieNames = ['히든페이스', '위키드', '글래디에이터2', '청설']; // 행을 먼저 넣고
+let movieRatings = [8, 4, 7, 6];    // 열에서 찬 별 넣고 빈 별 넣고
+
+for (i = 0; i <= movieNames.length - 1; i++) {  // 행 반복 : 히든페이스 -> 하단 for 반복 -> 위키드 ...
+
+    let stars = ""; // 별 넣을 변수 설정
+    rate = movieRatings[i]  
+
+    for (r = 0; r <= movieRatings[i]  - 1; r++) {   // 무비레이팅 인덱스 길이만큼 찬 별
+        stars = stars + "★";
+    }
+
+    for (s = 0; s <= (10 - movieRatings[i] ) - 1; s++) { // 10 - 무비레이팅 인덱스 길이만큼 빈 별
+        stars = stars + "☆";
+    }
+
+    console.log(movieNames[i] + "\t" + stars);  // 영화 이름  + 공백 + 별
+}
+    */
 
 /* 
 
@@ -444,13 +469,30 @@ for 반복문을 사용하여 6개의 좌석을 모두 출력합니다.
 빈좌석 예약석   
 예약석 빈좌석
 예약석 빈좌석
+
+빈좌석 = blue
+예약석 = red
 */
 
-/* 
+
+/*
 let seatStatus = ['빈좌석', '예약석', '예약석', '빈좌석', '예약석', '빈좌석'];
-for ( let index = 0 ; index <= seatStatus.length ; index++ ) {
-    let seat 
+let output = '';
+
+for (let i = 0; i <= seatStatus.length - 1; i++) {
+    let seat = seatStatus[i];
+    if (seat == "빈좌석") {
+        output = output + `<span style="color: blue;">  ${seat}  </span>`;
+
+    } else if (seat == "예약석") {
+        output = output + `<span style= "color: red;">  ${seat}  </span>`;
+    }
+    if ((i + 1) % 2 == 0) {
+        output = output + `<br />`; 
+    }
 }
+
+document.write(output)
 
 */
 
@@ -464,7 +506,7 @@ let carNumbers = ['210어7125', '142가7415', '888호8888', '931나8234'];
 let usageMinutes = [65, 30, 140, 420];
 (2). 요금 규정
 기본 요금: 최초 30분까지 1,000원
-추가 요금: 30분 초과 시, 매 10분마다 500원씩 추가
+추가 요금: 30분 초과 시, 매 10분마다 500원씩 추가 () 
 일일 최대 요금: 20,000원 (아무리 오래 주차해도 20,000원을 초과할 수 없음)
 (3). 구현 조건
 for 반복문을 사용하여 모든 차량의 데이터를 순회합니다.
@@ -482,9 +524,29 @@ HTML에 차량 번호, 주차 시간, 최종 요금을 한 줄씩 출력합니�
 계산 예시:65분 주차 시 parseInt( (65 - 30) / 10 )는 parseInt(3.5)가 되어 결과는 3이 됩니다. 따라서 추가 요금은 3 * 500원으로 계산됩니다.
 */
 
+let carNumbers = ['210어7125', '142가7415', '888호8888', '931나8234'];
+let usageMinutes = [65, 30, 140, 420];
 
+let output = '';
 
+for (let i = 0; i <= carNumbers.length - 1; i++) {    // 자동차 번호 순회, 이제 사용한 분을 1:1로 순회해야함
+    let time = usageMinutes[i];
+    if (time <= 30) {
+        price = 1000;
+    }
 
+    if (time > 30) {
+        price = 1000 + parseInt(500 * (time - 30 / 10));
+    }
+
+    if( price > 20000){
+        price == 20000;
+    }
+
+    output = output + `${carNumbers[i]} : ${time}분 주차, 최종 요금: ${price}원`;
+}
+
+document.write(output)
 
 
 

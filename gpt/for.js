@@ -159,8 +159,23 @@ for( let i = 1; i <= 100 ; i++){
 // 1부터 10까지 더한 총합을 sum에 저장하고 출력하기
 // (0 + 1) + (0 + 2) + (0 + 3) + ...
 
+/*
 sum = 0;
 for (let i = 1; i <= 10; i++) {
     sum = sum + i
 }
 console.log("총합: " + sum);
+*/
+
+let ages = [9, 17, 21, 15, 30];
+for (i = 0; i <= ages.length - 1; i++) {
+    if (ages[i] < 20) {
+        console.log(ages[i])
+    }
+}
+
+for (dan = 2; dan <= 9; dan++) {
+    for (gob = 1; gob <= 9; gob++) {
+        console.log(dan + "x" + gob + "=" + (dan * gob))
+    }
+} 
