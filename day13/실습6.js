@@ -392,8 +392,22 @@ for 반복문을 사용하여 모든 영화를 순회합니다.
 히든페이스      ★★★★★★★★☆☆
 위키드          ★★★★☆☆☆☆☆☆
 글래디에이터2   ★★★★★★★☆☆☆
-청설            ★★★★★★☆☆☆☆
+청설            ★★★★★★☆☆☆☆ star2 == 10 - star1 
 */
+
+let movieNames = ['히든페이스', '위키드', '글래디에이터2', '청설']; // 행을 먼저 넣고
+let movieRatings = [8, 4, 7, 6];    // 열에서 찬 별 넣고 빈 별 넣고
+output = "";
+
+for (i = 0; i <= movieNames.length - 1; i++) {
+
+    let stars = ""; // 별 넣을 변수
+
+    for (r = 0; r <= movieRatings[i].length - 1; r++) {
+        stars + stars + "★";
+        console.log(stars)
+    }
+}
 
 /* 
 
