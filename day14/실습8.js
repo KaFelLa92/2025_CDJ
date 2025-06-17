@@ -1,12 +1,13 @@
 // [실습8]
-/*  
+/*
 
     문제 1 : prompt로 제품 정보 객체 만들기
     prompt를 세 번 사용하여 사용자로부터 '제품명', '가격', '제조사'를 순서대로 입력받습니다.
-    입력받은 정보로 하나의 product 객체를 생성하고, 생성된 객체를 콘솔에 출력하시오. 
+    입력받은 정보로 하나의 product 객체를 생성하고, 생성된 객체를 콘솔에 출력하시오.
 
 */
 
+/*
 // 1. 프롬프트
 let pname = prompt("제품명 : ")
 let pprice = prompt("가격 : ")
@@ -20,3 +21,359 @@ const obj2 = { pname , pprice , pcompany };
 console.log(array)
 console.log(obj1)
 console.log(obj2)
+*/
+
+/*
+문제 2: prompt로 회원 가입 및 아이디 중복 확인 기능 구현
+prompt를 세 번 사용하여 사용자로부터 '아이디', '비밀번호', '이름'을 순서대로 입력받습니다.
+입력받은 정보로 하나의 member 객체를 생성하고, members 배열에 저장하여 배열을 콘솔에 출력하시오.
+단] 입력받은 아이디가 이미 배열에 존재하면 '존재하는 아이디 입니다'를 출력하고 배열에 등록하지 않습니다.
+const members = [
+  { id: 'user1', password: 'pass1', name: '사용자1' },
+  { id: 'user2', password: 'pass2', name: '사용자2' },
+];
+
+1. prompt를 세 번 사용 : 아이디, 비밀번호, 이름을 순서대로 입력
+2. 입력받은 정보(여러 변수)로 하나의 member 객체
+    * 입력받은 아이디가 이미 배열에 존재하는지 여부 확인하고, 존재하면 등록하지 않음
+3. member 객체, members 배열에 저장
+4. members 배열을 콘솔에 출력
+
+*/
+
+/*
+
+const members = [
+    { id: 'user1', password: 'pass1', name: '사용자1' },
+    { id: 'user2', password: 'pass2', name: '사용자2' },
+];
+
+let id = prompt("아이디를 입력하세요.")
+let pw = prompt("비밀번호를 입력하세요.")
+let name = prompt("이름을 입력하세요.")
+
+let member = {};
+member.id = id;     // 프롬프트에 입력한 id가 member의 값으로 들어감
+member.pw = pw;
+member.name = name;     // vs let member = { id : id , pw : pw , name : name }
+
+let idCheck = false;
+for(let i = 0; i <= members.length - 1; i++){
+    let member = members[i];
+    if(member.id == id){
+        idCheck = true; // 중복체크
+        console.log(`존재하는 아이디 입니다`)
+        break; // 반복문 종료
+    }
+} // for문 종료
+
+if(idCheck == false){
+    members.push(member)  // 멤버스에 푸쉬한다 멤버(멤버스의 인덱스)를
+    console.log(`등록 완료`)
+} else {
+    console.log(`등록 실패`)
+}
+
+console.log(members)
+
+/*
+let idCheck = false;
+for (let i = 0; i <= members.length - 1; i++) {
+    let member = members[i]; // 멤버 변수를 멤버스 상수의 인덱스로 꺼내기
+    if (member.id == id) {
+        idCheck = true; // 중복 체크!!!
+        console.log(`존재하는 아이디 입니다`)
+        break; // 반복문 종료
+    }   //
+}   // for end
+if (idCheck == false) {
+    members.push(member);
+    console.log(`등록 성공`);
+} else {
+    console.log(`등록 실패`);
+}
+console.log(members)
+*/
+
+
+/*
+문제 3: 객체 배열의 속성 값 평균 구하기
+scores 배열에 담긴 모든 학생의 수학(math) 점수 평균을 계산하여 콘솔에 출력하시오.
+const scores = [
+  { name: 'A', math: 80, science: 92 },
+  { name: 'B', math: 95, science: 88 },
+  { name: 'C', math: 76, science: 78 }
+];
+*/
+
+/*
+
+const scores = [
+    { name: 'A', math: 80, science: 92 },
+    { name: 'B', math: 95, science: 88 },
+    { name: 'C', math: 76, science: 78 }
+];
+
+*/
+
+// 반복문 없이
+/*
+let 학생객체1 = scores[0]
+let 학생객체2 = scores[1]
+let 학생객체3 = scores[2]
+let 학생1수학점수 = 학생객체1.math; //80
+let 학생2수학점수 = 학생객체2.math; //95
+let 학생3수학점수 = 학생객체3.math; //76
+let 합계 = 학생1수학점수 + 학생2수학점수 + 학생3수학점수 ; // 80 + 95 + 76
+let 인원수 = scores.length // 3
+let 평균 = 합계 / 인원수 ; // 251 / 3
+// 반복문 풀이
+*/
+
+/*
+
+let sum = 0; // 밖에 쓰는 이유, for문에 쓰면 반복할 때마다 초기화됨. 누적해야함
+for (let i = 0; i <= scores.length - 1; i++) {
+    let student = scores[i]; // i번째 학생객체 호출
+    sum = sum + student.math; // i번째 학생객체 수학점수 속성값 호출
+}   // for end
+console.log(parseInt(sum / scores.length)); // parseInt로 정수값 출력
+
+*/
+
+/*
+문제 4: 특정 조건을 만족하는 객체 찾기
+products 배열에서 id가 3인 상품 객체를 찾아, 해당 객체 전체를 콘솔에 출력하시오. 일치하는 객체가 없으면 "상품을 찾을 수 없습니다."를 출력합니다.
+const products = [
+  { id: 1, name: '사과' },
+  { id: 2, name: '바나나' },
+  { id: 3, name: '포도' },
+  { id: 4, name: '딸기' }
+];
+*/
+
+/*
+const products = [
+    { id: 1, name: '사과' },
+    { id: 2, name: '바나나' },
+    { id: 3, name: '포도' },
+    { id: 4, name: '딸기' }
+];
+
+for (let i = 0; i <= products.length; i++) {
+    let fruit = products[i]
+    if (fruit.id == 3) {
+        idCheck = true; // 찾았다.
+        console.log(fruit);
+        break;
+    }   // for 문 끝내고 찾았다 못찾았다 판단하기
+}
+
+if (idCheck == false) {
+    console.log(`상품을 찾을 수 없습니다.`)
+}
+    */
+
+
+/*
+문제 5: 객체 배열 필터링하기
+users 배열에서 isActive가 true인 사용자들만으로 구성된 새로운 배열 activeUsers를 만들고, 이 배열을 콘솔에 출력하시오.
+const users = [
+  { id: 1, name: '유저1', isActive: true },     
+  { id: 2, name: '유저2', isActive: false },
+  { id: 3, name: '유저3', isActive: true },
+  { id: 4, name: '유저4', isActive: false }
+];
+
+1. users 배열에서 isActive가 true인 사용자를 순회하며 찾는다.
+2. 
+
+*/
+
+/*
+
+const users = [
+    { id: 1, name: '유저1', isActive: true },
+    { id: 2, name: '유저2', isActive: false },
+    { id: 3, name: '유저3', isActive: true },
+    { id: 4, name: '유저4', isActive: false }
+];
+
+let activeUsers = [];
+
+for (let i = 0; i <= users.length - 1; i++) {
+    let user = users[i]
+    if (user.isActive == true) {
+        activeUsers.push(user)
+    }
+} console.log(activeUsers)
+*/
+
+
+/*
+문제 6: 객체 배열 데이터 변환하기
+movies 배열에 있는 각 영화 객체에서 title 속성만 추출하여, 영화 제목들로만 이루어진 새로운 배열 movieTitles를 만들고 콘솔에 출력하시오.
+const movies = [
+  { title: '인셉션', director: '크리스토퍼 놀란' },
+  { title: '기생충', director: '봉준호' },
+  { title: '매트릭스', director: '워쇼스키 자매' }
+];
+
+1. for문 작성하여, 배열에서 title의 인덱스만 
+*/
+
+/*
+const movies = [
+    { title: '인셉션', director: '크리스토퍼 놀란' },
+    { title: '기생충', director: '봉준호' },
+    { title: '매트릭스', director: '워쇼스키 자매' },
+    { title: '화이', director: '장준환' }
+];
+
+let movieTitles = [];
+
+for (let i = 0; i <= movies.length - 1; i++) {
+    titles = movies[i].title
+    movieTitles.push(titles)
+}   console.log(movieTitles);
+*/
+
+/*
+문제 7: 데이터 그룹화하기
+다음 team 배열을 department를 기준으로 그룹화하여, 아래 result와 같은 형태로 만드시오.
+const team = [
+  { name: '철수', department: '개발팀' },
+  { name: '영희', department: '기획팀' },
+  { name: '민수', department: '개발팀' },
+  { name: '지혜', department: '기획팀' }
+];
+// 최종 결과 형태 (result)
+// {
+//   '개발팀': ['철수', '민수'],
+//   '기획팀': ['영희', '지혜']
+// }
+
+
+1. for문으로 team[i] 를 변수로 하는 member 변수 생성
+2. if문으로 department 속성이 개발팀인지 확인하여, dpCheck == true일 경우 team1은 멤버
+3. console.log(team1)
+4. if문으로 dpCheck == false일 경우 team2는 멤버
+5. console.log(team2)
+
+*/
+
+/*
+const team = [
+    { name: '철수', department: '개발팀' },
+    { name: '영희', department: '기획팀' },
+    { name: '민수', department: '개발팀' },
+    { name: '지혜', department: '기획팀' }
+];
+
+let team1 = [];
+let team2 = [];
+
+for (let i = 0; i <= team.length - 1; i++) {
+    member = team[i].department;
+    if (member == '개발팀') {
+        team1.push(team[i].name)
+    } else {
+        team2.push(team[i].name)
+    }
+}
+
+/* 이거는 뇌절임
+for (let t = 0; t <= team1.length - 1; t++){
+    console.log(`개발팀 : ${team1[t].name}`)
+}
+*/
+
+/*
+let result = { "개발팀" : team1 , "기획팀" : team2 }
+console.log(result)
+*/
+
+
+/*
+문제 8: 장바구니 총액 계산하기
+고객의 장바구니 정보를 담은 cart 배열과 상품 정보를 담은 productsInfo 배열이 있습니다.
+cart 배열: 각 요소는 고객이 담은 상품의 id와 quantity(수량)를 가집니다.
+productsInfo 배열: 각 요소는 상품의 고유 id와 price(가격)를 가집니다.
+cart 배열을 기준으로, 장바구니에 담긴 모든 상품의 총 결제 금액을 계산하여 콘솔에 출력하세요.
+const cart = [{ id: 1, quantity: 2 },{ id: 3, quantity: 1 }];
+const productsInfo = [
+  { id: 1, price: 1000 },
+  { id: 2, price: 5000 }, // 장바구니에 없는 상품
+  { id: 3, price: 2500 }
+];
+
+1. for문으로 cart의 id가 productinfo와 같은 지 순회하면서, if문으로 퀀티티 값을 id가 같은 프로덕트 값에 추가해준다.
+2. id 2의 값은 불리언 체크에서 빼야한다. or 퀀티티 0을 넣는다.
+3. 각 배열의 프라이스와 퀀티티를 곱한 후, 합한 값을 sum 변수에 넣는다.
+4. console.log(sum)
+
+*/
+
+/*
+let idcheck = true;
+
+const cart = [{ id: 1, quantity: 2 },{ id: 3, quantity: 1 }];
+const productsInfo = [
+  { id: 1, price: 1000 },
+  { id: 2, price: 5000 }, // 장바구니에 없는 상품
+  { id: 3, price: 2500 }
+];
+
+for(i = 0; i <= cart.length -1; i++){
+    if(cart.id == productsInfo.id){
+         = cart.quantity
+    }
+
+}
+
+
+
+
+/*
+문제 9: 투표 결과 집계하기
+다음 votes 배열은 투표 결과를 나타냅니다. 각 후보가 몇 표를 받았는지 집계하여, 후보의 이름이 키이고 득표수가 값인 객체를 만들어 콘솔에 출력하시오.
+const votes = ['A', 'B', 'B', 'C', 'A', 'B', 'A'];
+// 출력 예시: { A: 3, B: 3, C: 1 }
+*/
+
+/*
+문제 10: 웹툰 평점 시각화하기
+webtoons 배열의 데이터를 이용하여, 각 웹툰의 평점을 별(★, ☆)로 시각화하여 HTML에 출력하시오.
+조건 1: 평점(rating)은 10점 만점입니다.
+조건 2: 평점의 정수 부분만큼 꽉 찬 별(★)을, 10 - 정수 만큼 빈 별(☆)을 출력합니다. (예: 평점이 8.5이면 ★ 8개, ☆ 2개)
+조건 3: HTML에 웹툰 제목과 변환된 별점을 한 줄씩 출력합니다.
+const webtoons = [
+  { title: '나 혼자만 레벨업', rating: 9.8 },
+  { title: '유미의 세포들', rating: 9.9 },
+  { title: '전지적 독자 시점', rating: 9.7 }
+];
+/* HTML 출력 예시:
+   나 혼자만 레벨업 ★★★★★★★★★☆
+   유미의 세포들 ★★★★★★★★★☆
+   전지적 독자 시점 ★★★★★★★★★☆
+*/
+
+
+/*
+문제11 : 공공데이터 포털 : 인천 부평구 맛집 현황 테이블 만들기
+[구현 조건]
+  1. 공공데이터 포털에서 '인천광역시 부평구_맛있는 집(맛집) 현황' 의 open API 신청하여 결과를 복사하여 'response' 변수에 저장하시오.
+  let response = {}
+  2. response 객체 안의 data 배열을 반복문을 사용하여 순회합니다.
+  3. 각 동(행)의 정보를 표시할 HTML <table> 태그를 문자열로 만듭니다.
+  4. 테이블의 각 셀에는 '업 소 명', '세대수', '소재지', '지정메뉴', '전화번호','업태' 정보가 순서대로 포함되어야 합니다.
+  5. 최종적으로 완성된 HTML 테이블 문자열을 document.write() 사용하여 화면에 출력합니다.
+[ 공공데이터 open API 신청 ]
+  1. 공공데이터 포털 : https://www.data.go.kr
+  2. 회원가입/로그인
+  3. '부평구 맛집' 검색
+  4. '인천광역시 부평구_맛있는 집(맛집) 현황' Open API를 찾아 [활용신청] 버튼을 누르고, 절차에 따라 인증키를 발급받습니다.
+  5. 인증키 설정 ( Encoding , Decoding 순서대로 대입하여 설정 )
+  6. 인증키 설정 후 'API 목록' 에서  [Open Api 호출] 합니다.
+  7. **실행 결과(JSON)**를 전체 복사합니다.  
+  */
