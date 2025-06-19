@@ -1,0 +1,176 @@
+/*
+예제 1: 기본 함수 선언 및 호출
+'함수 호출 성공!'이라는 메시지를 콘솔에 출력하는 sayHello라는 이름의 함수를 정의하고, 그 함수를 호출하시오.
+
+함수 선언 시 고려할 사항 : 1. 매개변수 2. 반환값 3. 처리할명령어
+(1)매개변수     : X
+(2)반환값       : X
+(3)처리할명령어 : console.log();
+*/
+
+function sayHello() {
+    console.log('함수 호출 성공!');
+}
+
+sayHello();
+
+/*
+예제 2: 매개변수를 사용하는 함수
+임의의 두 개의 숫자(number)를 매개변수로 받아, 그 합을 콘솔에 출력하는 printSum 함수를 정의하시오. printSum(5, 10)을 호출하여 결과를 확인하시오.
+
+(1)매개변수     : 숫자1 , 숫자2     : 매개변수명은 아무거나.
+(2)반환값       : X
+(3)처리할명령어 : 더하기 해서 console.log()
+*/
+
+function printSum(x, y) {
+    console.log(x + y)
+}
+
+printSum(5, 10);       // 15 , 정의한 함수 호출 시 매개변수의 인수 전달 , 숫자1 = 5 / 숫자2 = 10 대응
+printSum(6, 2)         // 8
+
+
+/*
+예제 3: 값을 반환(return)하는 함수
+임의의 이름을 문자열(string)로 매개변수를 받아 "환영합니다, [이름]님!" 형식의 문자열을 반환하는 getWelcomeMessage 함수를 정의하시오.
+함수를 호출한 결과를 변수에 저장하고, 그 변수를 콘솔에 출력하시오.
+
+(1)매개변수     : 이름(문자열)  * 매개변수명 아무거나.
+(2)반환값       : "환영합니다, [이름]님!"
+(3)처리할명령어  : X
+*/
+
+function getWelcomeMessage(name) {
+    return '환영합니다,' + name + '님!';
+}
+
+let sayName = getWelcomeMessage('동진');
+console.log(sayName);
+
+
+/*
+예제 4: 함수를 이용한 카운터
+0의 값을 가진 counter라는 전역 변수를 만드시오.
+호출될 때마다 counter의 값을 1씩 증가시키는 increaseCount 함수를 정의하시오.
+함수를 세 번 호출한 뒤, counter의 값을 콘솔에 출력하여 3이 되었는지 확인하시오.
+(1)매개변수     : X
+(2)반환값       : X
+(3)처리할명령어  : 전역변수(counter) 1 증가.
+*/
+
+let counter = 0;    // 전역번수
+function increaseCount() {   // 함수 정의
+    counter += 1; // vs counter = counter + 1 vs counter += 1
+}
+increaseCount();
+increaseCount();
+increaseCount();
+console.log(counter)
+
+
+
+
+/*
+예제 5: for 반복문을 포함한 함수
+임의의 숫자 n을 매개변수로 받아, 1부터 n까지의 숫자를 콘솔에 차례대로 출력하는 printNumbers 함수를 정의하시오.
+(1)매개변수     : 숫자n
+(2)반환값       : X
+(3)처리할명령어 : 1부터 n까지 숫자 콘솔에 차례대로 출력
+*/
+
+function printNumbers(n) { // 함수 정의
+    for (let i = 1; i <= n; i++) {  // i는 1부터 매개변수(n)까지 1씩 증가
+        console.log(i)
+    }
+}   // func end
+
+printNumbers(10);   // 1 2 3 4 5 6 7 8 9 10
+
+
+/*
+예제 6: prompt와 함수 활용
+prompt를 이용해 사용자로부터 이름을 입력받으시오.
+입력받은 이름을 매개변수로 받아, 해당 이름이 저장된 userList 전역 배열에 push하는 addUser 함수를 정의하고 호출하시오.
+(1)매개변수     : prompt(이름)
+(2)반환값       : X
+(3)처리할명령어 : 매개변수 배열에 .push
+*/
+
+let userList = []; // 전역함수에 빈배열 선언
+
+function addUser(name) {    // 함수 정의
+    userList.push(name);    // 매개변수를 배열 저장
+}
+// 함수 호출
+let sayYa = prompt('이름 : ');    // 사용자로부터 이름을 입력받기
+addUser(sayYa); // 입력받은 이름을 addUser 함수의 매개변수로 전달.
+console.log(userList); // [확인]
+
+
+// 매개변수 : 함수{} 안으로 들어오는 자료를 저장하는 변수           
+// 리턴값 : 함수{}가 종료되면서 *함수호출*했던 곳으로 반환하는 자료
+// 처리할명령어 : 함수{}가 실행되면서 실행할 코드들
+
+/*
+예제 7: 배열을 매개변수로 전달
+임의의 이름 들이 담긴 배열을 매개변수로 받아, for 반복문을 사용하여 배열의 모든 요소를 콘솔에 하나씩 출력하는 printFruits 함수를 정의하시오.
+(1)매개변수     : array
+(2)반환값       : X
+(3)처리할명령어 : 배열의 모든 요소를 콘솔에 하나씩 출력
+*/
+
+function printFruits(array) {   // 함수 정의
+    for (let i = 0; i <= array.length - 1; i++) {
+        console.log(array[i]);
+    }
+}   // f end
+// 확인차 정의한 함수 호출
+let names = ['유재석', '강호동', '신동엽']
+printFruits(names);
+
+
+/*
+예제 8: Boolean 값 반환하기
+임의의 숫자 하나를 매개변수로 받아, 그 숫자가 0보다 크면 true를, 그렇지 않으면 false를 반환하는 isPositive 함수를 만들어 보세요.
+(1)매개변수     : num
+(2)반환값       : 불리언
+(3)처리할명령어  : num 매개변수가 0보다 큰지 작은지 비교
+*/
+
+function isPositive(num) {
+    if (num > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+// 확인차 정의한 함수 호출
+isPositive(3);  // 실행 후 리턴값은 눈에 보이지 않음.
+let result = isPositive(0); // [반환값 변수에 저장o]
+console.log(result);
+
+/*
+예제 9: 전역 변수와 지역 변수
+let globalText = '전역'; 변수를 선언하세요. printLocal 함수 안에서는 let localText = '지역'; 변수를 선언하고, 
+두 변수를 모두 콘솔에 출력해 보세요. 함수 바깥에서는 globalText만 출력되는 것을 확인하세요.
+(1)매개변수     : x
+(2)리턴값       : x
+(3)처리할명령어 : localText변수 선언, 두 변수 콘솔 출력. 함수 바깥에서 globalText만 출력되게하기
+*/
+
+let globalText = '전역';
+function printLocal() {
+    let localText = '지역';
+    console.log(globalText);
+    console.log(localText);
+    return localText; // 지역변수가 갖는 자료를 함수 밖으로 빼려면 리턴값 써라!!!
+}   // f end
+
+printLocal();
+console.log(globalText);
+console.log(localText);   // 함수 안에서 선언된 지역변수라 오류 발생
+
+
+// [ 확인 ]
+
