@@ -336,7 +336,8 @@ for(i = 0; i <= cart.length -1; i++){
 
 /*
 문제 9: 투표 결과 집계하기
-다음 votes 배열은 투표 결과를 나타냅니다. 각 후보가 몇 표를 받았는지 집계하여, 후보의 이름이 키이고 득표수가 값인 객체를 만들어 콘솔에 출력하시오.
+다음 votes 배열은 투표 결과를 나타냅니다. 각 후보가 몇 표를 받았는지 집계하여, 
+후보의 이름이 키(속성)이고 득표수가 값(데이터)인 객체를 만들어 콘솔에 출력하시오.
 const votes = ['A', 'B', 'B', 'C', 'A', 'B', 'A'];
 // 출력 예시: { A: 3, B: 3, C: 1 }
 
@@ -345,13 +346,14 @@ const votes = ['A', 'B', 'B', 'C', 'A', 'B', 'A'];
 
 const votes = ['A', 'B', 'B', 'C', 'A', 'B', 'A'];
 
+let result = { A: 0, B: 0, C: 0 };
 
-
-for(let i = 0; i <= votes.length - 1; i++){
-    if(votes[i] = 'A'){
-
-    }
+for (let i = 0; i <= votes.length - 1; i++) {
+    let vote = votes[i]
+    result[vote] += 1
 }
+
+console.log(result)
 
 /*
 문제 10: 웹툰 평점 시각화하기

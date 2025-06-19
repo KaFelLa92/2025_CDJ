@@ -138,7 +138,7 @@ const students = [
 ];
 (1)매개변수     : X
 (2)리턴값       : score가 가장 높은 학생의 이름
-(3)처리할명령어  : X
+(3)처리할명령어  : score가 가장 높은 학생의 이름 찾기
 
 */
 
@@ -157,8 +157,9 @@ function findTopStudent() {
             topScore = student.score
             elite = student.name
         }
-    } return elite;
-}
+    } // for end
+    return elite;
+}   // func end
 
 let elite = findTopStudent();
 console.log(elite)
@@ -175,7 +176,7 @@ const products = [
 ];
 (1)매개변수     : 
 (2)리턴값       : 
-(3)처리할명령어 : 
+(3)처리할명령어 : 각 상품을 소개하는 HTML 요소를 동적으로 만들어 페이지에 표시
 */
 
 const products = [
@@ -183,6 +184,12 @@ const products = [
   { name: '모니터', price: 350000, stock: 12 },
   { name: '키보드', price: 80000, stock: 25 }
 ];
+
+function renderProducts(){
+    for( i = 0; i <= products.length - 1; i++){
+
+    }
+}
 
 
 
