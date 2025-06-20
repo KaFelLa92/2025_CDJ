@@ -1,13 +1,131 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <title>Page Title</title>
 
 </head>
-<body>
 
-    
-    <script src='실습15.js'></script>    
+<body>
+    <div id="wrap"> <!-- 전체 묶기 -->
+        <div id="header"> <!-- 헤더 시작 -->
+            <h1> 인사관리 대시보드</h1>
+        </div> <!-- 헤더 끝 -->
+        <div id="main"> <!-- 메인 시작 (등록 & 출력 영역) -->
+            <div id="depart"> <!-- 1. 부서 영역 시작 -->
+                <div class="departAdd"> <!-- 부서 등록 시작 -->
+                    <h2 class="titleText">
+                        부서 등록
+                    </h2>
+                    부서명: <input id="departInput" type="text" placeholder="부서명 입력하세요." />
+                    <button class="btnAdd" onclick="departAdd()"> 등록 </button>
+                </div> <!-- 부서 등록 끝 -->
+                <div class="departInven"> <!-- 부서 목록 시작 -->
+                    <h2 class="titleText">
+                        부서 목록
+                    </h2>
+                    <div class="departFlex">
+                        마케팅부 <button class="btnEdit" onclick="departEdit()"> 수정 </button>
+                        <button class="btnDelete" onclick="departDelete()"> 삭제 </button>
+                    </div>
+                    <div class="departFlex">
+                        기획부 <button class="btnEdit" onclick="departEdit()"> 수정 </button>
+                        <button class="btnDelete" onclick="departDelete()"> 삭제 </button>
+                    </div>
+                    <div class="departFlex">
+                        재무부 <button class="btnEdit" onclick="departEdit()"> 수정 </button>
+                        <button class="btnDelete" onclick="departDelete()"> 삭제 </button>
+                    </div>
+                    <div class="departFlex">
+                        개발부 <button class="btnEdit" onclick="departEdit()"> 수정 </button>
+                        <button class="btnDelete" onclick="departDelete()"> 삭제 </button>
+                    </div>
+                    <div class="departFlex">
+                        영업부 <button class="btnEdit" onclick="departEdit()"> 수정 </button>
+                        <button class="btnDelete" onclick="departDelete()"> 삭제 </button>
+                    </div>
+                </div> <!-- 부서 목록 끝 -->
+            </div> <!-- 부서 영역 끝-->
+            <div id="employ"> <!-- 2. 사원 관리 시작 -->
+                <div class="employAdd"> <!-- 사원 등록 시작 -->
+                    <h2 class="titleText"> 사원등록 </h2>
+                    <div class="employAddLeft"> <!-- 사원 등록 입력 시작 -->
+                        <h5 class="subTitle"> 사원정보를 입력하세요 </h5>
+                        <select id="employInput">
+                            <option value="" disabled selected> 부서를 선택하세요. </option>
+                            <option value="1"> 마케팅부 </option>
+                            <option value="2"> 기획부 </option>
+                            <option value="3"> 재무부 </option>
+                            <option value="4"> 개발부 </option>
+                            <option value="5"> 영업부 </option>
+                        </select> <br />
+                        <input id="nameInput" type="text" placeholder="사원명" /> <br />
+                        <input id="rankInput" type="text" placeholder="직급명" />
+                        <h5 class="subTitle"> 사진을 첨부하세요 </h5>
+                        <input id="imgInput" type="file" accept="image/* " />
+                        <button class="btnAdd" onclick="employAdd()"> 등록 </button>
+                    </div> <!-- 사원 등록 입력 끝-->
+                    <div class="employAddRight"> <!-- 사원 등록 미리보기 시작 -->
+                        <img id="imgPreview" src="https://placehold.co/100x100" alt="employPhoto" />
+                        <p id="textPreview"> 사원번호: 004 <br /> 부서: 마케팅부 <br /> 성함: 강홍보 <br /> 직급: 주임 <br /> 등록일:
+                            2025-06-20 </p>
+                    </div> <!-- 사원 등록 미리보기 끝 -->
+                </div> <!-- 사원 등록 끝-->
+                <div class="employInven"> <!-- 사원 목록 시작 -->
+                    <h2 class="titleText"> 사원목록 </h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th> 사진 </th>
+                                <th> 이름 </th>
+                                <th> 부서 </th>
+                                <th> 직급 </th>
+                                <th> 관리 </th>
+                            </tr>
+                        </thead>
+                        <tbody id="employBody">
+                            <tr>
+                                <td> <img src="https://placehold.co/100x100" /> </td>
+                                <td> 노채무 </td>
+                                <td> 재무부 </td>
+                                <td> 이사 </td>
+                                <td> <button class="btnEdit" onclick="employEdit()"> 수정 </button> <button
+                                        class="btnDelete" onclick="employDelete()"> 삭제 </button> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> <!-- 사원 목록 끝-->
+            </div> <!-- 사원 관리 끝-->
+            <div id="vaca"> <!-- 3. 휴가 관리 시작-->
+                <div class="vacaAdd"> <!-- 휴가 신청 시작-->
+                    <h2 class="titleText"> 휴가 신청 </h2>
+                    <h5 class="subTitle"> 휴가신청사원 </h5>
+                    <select id="employName">
+                        <option value="" disabled selected> 사원명 </option>
+                        <option value="1"> 노채무 </option>
+                        <option value="2"> 박애견 </option>
+                        <option value="3"> 오지원 </option>
+                        <option value="4"> 강홍보 </option>
+                    </select>
+                    <h5 class="subTitle"> 휴가시작일 & 종료일 </h5>
+                    시작 <input class="vacaStart" type="date" />
+                    종료 <input class="vacaEnd" type="date" />
+                    <h5 class="subTitle"> 휴가사유 </h5>
+                    <input class="vacaText" type="text" value="휴가사유를 입력해주세요." />
+                </div> <!-- 휴가 신청 끝-->
+                <div class="vacaInven"> <!-- 휴가 목록 시작-->
+                    <h2 class="titleText"> 휴가 목록 </h2>
+                    <div class=""> <!--  -->
+
+                    </div>
+                </div> <!-- 휴가 목록 끝-->
+            </div> <!-- 휴가 관리 끝-->
+        </div> <!-- 메인 끝 -->
+    </div>
+
+
+    <script src='실습15.js'></script>
 </body>
+
 </html>
