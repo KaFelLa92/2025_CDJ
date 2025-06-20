@@ -175,21 +175,30 @@ const products = [
   { name: '키보드', price: 80000, stock: 25 }
 ];
 (1)매개변수     : 
-(2)리턴값       : 
+(2)리턴값       : html 지역변수
 (3)처리할명령어 : 각 상품을 소개하는 HTML 요소를 동적으로 만들어 페이지에 표시
 */
 
+
+
 const products = [
-  { name: '노트북', price: 1200000, stock: 5 },
-  { name: '모니터', price: 350000, stock: 12 },
-  { name: '키보드', price: 80000, stock: 25 }
+    { name: '노트북', price: 1200000, stock: 5 },
+    { name: '모니터', price: 350000, stock: 12 },
+    { name: '키보드', price: 80000, stock: 25 }
 ];
 
-function renderProducts(){
-    for( i = 0; i <= products.length - 1; i++){
+function renderProducts() {
+    let html = '';  // 함수 안에 html써줘야함. 밖에 쓰면(전역변수) 함수 내에 영향을 못 줌.
 
-    }
+    for (i = 0; i <= products.length - 1; i++) {
+        product = products[i]
+        html += `<div> <h4> ${product.name} </h4> <p> ${Number(product.price)} </p> <p> ${Number(product.stock)} </p>`
+    } 
+    return html;
 }
+
+let html = renderProducts();
+document.write(html);
 
 
 
@@ -197,7 +206,12 @@ function renderProducts(){
 실습 7: 간단한 계산기
 num1, num2, operator ( '+', '-') 세 개의 매개변수를 받는 calculator 함수를 만드시오.
 operator가 '+'이면 두 수의 합을, '-'이면 두 수의 차를 콘솔에 출력하시오. (if문 사용)
+(1)매개변수     : num1, num2, operator
+(2)리턴값       : 
+(3)처리할명령어 : 
 */
+
+
 
 /*
 실습 8: HTML 리스트(ul, li) 동적 생성
