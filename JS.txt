@@ -326,4 +326,38 @@ JS 자료형은 미리 결정하지 않고 코드 실행 동안 결정되기에,
             - < 마크업 이벤트속성명="함수명()" >    : HTML에서 이벤트가 발생하면 정해진 함수가 실행
             HTML은 반환하지 않기 때문에, 이벤트 발생만 하고 결과가 돌아오진 않을 것.
 
+[ DOM 객체 ] : document(HTML) object(객체) model(표준) 
+    1. 정의 : 문서객체표준, HTML 마크업들을 객체처럼 다루기 *객체는 속성(property)과 함수(function)를 포함
+    2. 내장객체 : document
+    3. 주요 속성과 함수
+        (1) document.querySelector('선택자');       : HTML 마크업 객체 반환 함수, 반환값 : 객체1개
+        (2) document.querySelectorAll('선택자');    : HTML 마크업 객체 반환 함수, 반환값 : 배열1개(여러개)
+            * 선택자(CSS동일) : <마크업명> , .클래스명 , #ID명 , 
+        (3) (마크업객체).innerHTML                  : <마크업> **여기** </마크업> 에 HTML 문자열 대입
+            사용불가능 마크업 : <input /> , <img /> (혼자 열고 혼자 닫으면 불가능)
+        (4) (마크업객체).value                      : <마크업 value="**여기**" /> 에 자료 대입/호출
+            사용가능 마크업 : <input /> , <select > , <textarea> 등등
+        (5) (마크업객체).style                      : <마크업 style="**여기**" /> 에 CSS 문법 대입/호출
+
+        (6) (마크업객체).src                        : <마크업 src="**여기**" /> 에 파일(소스) 경로(바이트) 대입/호출
+            사용가능 마크업 : <img /> , <audio /> 등
+        (7) (마크업객체).remove()                   : HTML에서 지정 마크업 지우기
+        
+        (8) (마크업객체).classList                  소괄호 없으면 자료 , 소괄호 있으면 함수
+            (마크업객체).classList.add()            : 지정 마크업에 클래스 추가
+            (마크업객체).classList.remove()         : 지정 마크업의 클래스 삭제
+            (마크업객체).classList.toggle()         : 지정 마크업에 클래스 추가 혹은 (존재하면)삭제
+            (마크업객체).classList.contains()       : 지정 마크업에 클래스 존재 여부 TRUE/FALSE 반환
+        * 연산식 혹은 호출식이 길어졌을 때는 중간 결과를 변수에 담아서 확인 
+            예1]
+                let 변수명A = document.querySelector('선택자')
+                let 변수명B = 변수명A.value
+                        VS
+                let 변수명B = document.querySelector('선택자').value
+            예2]
+                let 변수명A = 3+2
+                let 변수명B = 변수명A * 5
+                        VS
+                let 변수명B = (3+2) * 5       
+
 

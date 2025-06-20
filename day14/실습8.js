@@ -344,16 +344,18 @@ const votes = ['A', 'B', 'B', 'C', 'A', 'B', 'A'];
 1. for문으로 A를 집계하여, 그 숫자만큼 속성A의 값에 넣으셈
 */
 
+/*
 const votes = ['A', 'B', 'B', 'C', 'A', 'B', 'A'];
 
 let result = { A: 0, B: 0, C: 0 };
 
 for (let i = 0; i <= votes.length - 1; i++) {
-    let vote = votes[i]
-    result[vote] += 1
+    let vote = votes[i] // 보트 변수는 보츠인덱스만큼 집계
+    result[vote] += 1   // 결과의 보트인덱스는 보트인덱스를 1씩 집계한 값
 }
 
-console.log(result)
+console.log(result) // 결과 콘솔 출력
+*/
 
 /*
 문제 10: 웹툰 평점 시각화하기
@@ -370,7 +372,18 @@ const webtoons = [
    나 혼자만 레벨업 ★★★★★★★★★☆
    유미의 세포들 ★★★★★★★★★☆
    전지적 독자 시점 ★★★★★★★★★☆
+
+    for문 돌려서   웹툰스.레이팅 값을 
+   parseInt를 사용해 정수값만 출력.
 */
+
+const webtoons = [
+  { title: '나 혼자만 레벨업', rating: 9.8 },
+  { title: '유미의 세포들', rating: 9.9 },
+  { title: '전지적 독자 시점', rating: 9.7 }
+];
+
+
 
 
 /*
