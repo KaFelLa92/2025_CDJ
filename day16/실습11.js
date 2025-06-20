@@ -206,9 +206,9 @@ document.write(html);
 실습 7: 간단한 계산기
 num1, num2, operator ( '+', '-') 세 개의 매개변수를 받는 calculator 함수를 만드시오.
 operator가 '+'이면 두 수의 합을, '-'이면 두 수의 차를 콘솔에 출력하시오. (if문 사용)
-(1)매개변수     : num1, num2, operator
+(1)매개변수     : num1, num2, operator ( '+' , '-' )
 (2)리턴값       : 
-(3)처리할명령어 : 
+(3)처리할명령어 : if문을 사용하여 
 */
 
 
