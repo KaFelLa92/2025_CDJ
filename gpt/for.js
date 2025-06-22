@@ -166,6 +166,7 @@ for (let i = 1; i <= 10; i++) {
 }
 console.log("총합: " + sum);
 */
+/*
 
 let ages = [9, 17, 21, 15, 30];
 for (i = 0; i <= ages.length - 1; i++) {
@@ -179,3 +180,5 @@ for (dan = 2; dan <= 9; dan++) {
         console.log(dan + "x" + gob + "=" + (dan * gob))
     }
 } 
+
+*/

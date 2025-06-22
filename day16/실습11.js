@@ -216,8 +216,17 @@ operator가 '+'이면 두 수의 합을, '-'이면 두 수의 차를 콘솔에 �
 (3)처리할명령어 : if문을 사용하여 
 */
 
-function calculator
+function calculator(num1, num2, operator) {
+    if (operator == '+') {
+        console.log(num1 + num2);
+    }
+    if (operator == '-') {
+        console.log(num1 - num2);
+    }
+}
 
+// calculator(5, 3, '+')
+// calculator(5, 3, '-')
 
 
 /*
@@ -226,7 +235,24 @@ todoList라는 할 일 목록이 담긴 전역 배열이 있습니다.
 renderList() 함수를 정의하시오. 이 함수는 todoList 배열을 순회하며 <li>할 일 내용</li> 형태의 HTML 문자열을 만듭니다.
 최종적으로 이 문자열을 HTML <ul> 태그로 표현하여 리스트를 화면에 그리시오.
 let todoList = ['장보기', '운동하기']
+(1)매개변수     : 
+(2)리턴값       : 
+(3)처리할명령어 : todoList 배열 순회하며(for문) <li> 할 일 내용 </li> 형태의 HTMl 문자열 출력하고, <ul>로 묶어
+
 */
+
+let todoList = ['장보기', '운동하기', '밥먹기']
+
+function renderList() {
+    let html = `<ul>`;
+    for (let i = 0; i <= todoList.length - 1; i++) {
+        html += `<li> ${todoList[i]} </li>`;
+    }
+    html += `</ul>`;
+    return html;
+}
+
+document.write(renderList());
 
 /*
 실습 9: 입장료 계산 함수
@@ -235,8 +261,21 @@ let todoList = ['장보기', '운동하기']
 8세 이상 19세 이하: "5,000원"
 20세 이상: "10,000원"
 계산된 가격 문자열을 반환(return)하시오.
+(1)매개변수 : age
+(2)리턴값   : 입장료(가격 문자열)
+(3)처리할명령어 : 8세미만 무료 , 8세이상 19세이하 5천원, 20세 이상 (if문 사용)
 */
 
+function getTicketPrice(age) {
+    if (age >= 20) {
+        return "10,000원";
+    } else if (age >= 8) {
+        return "5,000원";
+    } else {
+        return "무료";
+    }
+}
 
-
+getTicketPrice(age = 17);
+console.log(getTicketPrice(age));
 
