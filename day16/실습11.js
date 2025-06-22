@@ -110,6 +110,7 @@ gainScore()를 세 번, loseScore()를 한 번 호출한 뒤, 최종 점수를 �
 
 */
 
+/*
 let userScore = 0; // 전역변수
 
 function gainScore() {
@@ -127,6 +128,7 @@ gainScore();
 gainScore();
 loseScore();
 console.log(userScore);
+*/
 
 /*
 실습 5: 최고 점수 학생 찾기
@@ -142,6 +144,7 @@ const students = [
 
 */
 
+/*
 const students = [
     { name: '김철수', score: 85 },
     { name: '이영희', score: 92 },
@@ -163,6 +166,7 @@ function findTopStudent() {
 
 let elite = findTopStudent();
 console.log(elite)
+*/
 
 
 /*
@@ -181,6 +185,7 @@ const products = [
 
 
 
+/*
 const products = [
     { name: '노트북', price: 1200000, stock: 5 },
     { name: '모니터', price: 350000, stock: 12 },
@@ -199,7 +204,7 @@ function renderProducts() {
 
 let html = renderProducts();
 document.write(html);
-
+*/
 
 
 /*
@@ -207,9 +212,11 @@ document.write(html);
 num1, num2, operator ( '+', '-') 세 개의 매개변수를 받는 calculator 함수를 만드시오.
 operator가 '+'이면 두 수의 합을, '-'이면 두 수의 차를 콘솔에 출력하시오. (if문 사용)
 (1)매개변수     : num1, num2, operator ( '+' , '-' )
-(2)리턴값       : 
+(2)리턴값       : x
 (3)처리할명령어 : if문을 사용하여 
 */
+
+function calculator
 
 
 
