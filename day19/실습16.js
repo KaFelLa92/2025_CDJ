@@ -33,14 +33,12 @@
 
 
 
-// (1) 데이터 모델링
+// (1) 데이터 모델링. 전역변수 대신에 sessionStorage
 
 const userList = [
     { no: 1, id: 'qwe', pw: 'qwe' },
     { no: 2, id: 'asd', pw: 'asd' }
 ];
-
-
 
 // (2) 회원가입 함수
 
