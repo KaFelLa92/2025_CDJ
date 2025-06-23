@@ -112,12 +112,30 @@
                     시작 <input class="vacaStart" type="date" />
                     종료 <input class="vacaEnd" type="date" />
                     <h5 class="subTitle"> 휴가사유 </h5>
-                    <input class="vacaText" type="text" value="휴가사유를 입력해주세요." />
+                    <input class="vacaInput" type="text" value="휴가사유를 입력해주세요." />
+                    <button class="btnApp" onclick="vacaApp()"> 휴가신청 </button>
                 </div> <!-- 휴가 신청 끝-->
                 <div class="vacaInven"> <!-- 휴가 목록 시작-->
                     <h2 class="titleText"> 휴가 목록 </h2>
-                    <div class=""> <!--  -->
-
+                    <div class="vacaBox">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th> 사원명 </th>
+                                    <th> 휴가시작일 </th>
+                                    <th> 휴가종료일 </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> 강홍보 </td>
+                                    <td> 250622 </td>
+                                    <td> 250628 </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        휴가사유 <div class="vacaText"> 개인사정으로 인한 휴가 신청 </div>
+                        <button class="btnCancel" onclick="vacaCancel()"> 신청취소 </button>
                     </div>
                 </div> <!-- 휴가 목록 끝-->
             </div> <!-- 휴가 관리 끝-->
