@@ -74,7 +74,7 @@ CSS는 선택
 /* 
 
 [ 데이터 모델링 ]
- 
+
  1. 부서관리 (왼쪽)
     (1) 부서 등록 - 텍스트(부서명) , 버튼(등록)
     (2) 부서 목록 - 부서명 , 버튼(수정 , 삭제)
@@ -104,6 +104,7 @@ CSS는 선택
     (2) 사원 목록 출력함수  -> employPrint()
     (3) 사원 목록 수정함수  -> employEdit()
     (4) 사원 목록 삭제함수  -> employDelete()
+    (5) 사원 등록 미리보기함수 -> employPriview()
 
  3. 휴가 관리
     (1) 휴가 신청함수       -> vacaApp()
@@ -112,3 +113,115 @@ CSS는 선택
 
  */
 
+
+const departList = [
+    { dno: 1, dname: '마케팅부' },
+    { dno: 2, dname: '재무부' },
+    { dno: 3, dname: '지원부' },
+    { dno: 4, dname: '개발부' },
+    { dno: 5, dname: '영업부' }
+];
+let currentDno = 5; // * 코드 자동대입을 위한 현재 샘플 코드번호.
+
+const employList = [
+    { eno: 1, dno: 2, ename: '노채무', erank: '이사', eimg: 'https://placehold.co/100x100', edate: '2025-06-20' },
+    { eno: 2, dno: 4, ename: '박애견', erank: '차장', eimg: 'https://placehold.co/100x100', edate: '2025-06-20' },
+    { eno: 3, dno: 3, ename: '오지원', erank: '대리', eimg: 'https://placehold.co/100x100', edate: '2025-06-20' },
+    { eno: 4, dno: 1, ename: '강홍보', erank: '주임', eimg: 'https://placehold.co/100x100', edate: '2025-06-20' },
+];
+
+const vacaList = [
+    { vno: 1, eno: 4, vstart: '2025-06-22', vend: '2025-06-28' },
+    { vno: 2, eno: 1, vstart: '2025-05-19', vend: '2025-06-23' },
+    { vno: 3, eno: 2, vstart: '2025-06-15', vend: '2025-06-27' }
+];
+
+
+
+// 1-1 부서 등록함수 : 실행조건 : 등록버튼 눌렀을 때
+
+function departAdd() {
+    console.log(`departAdd XXOK`)
+    // (1) input(입력 마크업 객체) 값을 각각 가져오기
+    const departInput = document.querySelector('#departInput'); console.log(departInput)
+    // (2) input(입력 마크업 객체)의 입력값 가져오기
+    const dname = departInput.value; console.log(dname);
+    // (3) 유효성 검사 -> 입력한 값이 있는지 체크
+    if (dname == '') { // 부서명 입력 안 했을 때
+        alert('부서명을 입력 후 등록해주세요.')
+        return; // 
+    }
+    // (4) 여러 데이터 객체 구성하기
+    const depart = {
+        dno: ++currentDno, // 현재 부서코드에 1증가 후 구성
+        dname: dname    // 문자열은 그대로 씁니다.
+    }
+
+    // (5) 객체 배열에 저장하기
+    departList.push(depart); console.log(departList);
+
+    // (6) 성공했을 때
+    alert('부서명이 등록되었습니다.')
+    departInput.value = ''; // 입력창 초기화해서 무한 반복 막기
+    departPrint();  // 새로 렌더링하는 출력함수. 이제 출력함수에서 HTMl 구성하면 됨.
+}
+
+// 1-2 부서 목록 출력함수 : 실행조건 : 새로고침 and 부서 등록함수 실행되었을 때
+departPrint(); // 체크
+function departPrint() {
+    console.log(`departPrint XXOK`)
+    // (1) 어디에 출력되는가 : <div id="departBox"> 밑에 부서 목록 출력하기
+    const departBox = document.querySelector('#departBox'); console.log(departBox)
+    // (2) 무엇을 출력하는가 : 객체 정보를 html 형식으로 표현하기
+    let html = '';  // html 변수 넣기
+    for (let i = 0; i <= departList.length - 1; i++) {
+        const depart = departList[i]; console.log(depart); // 부서리스트의 인덱스를 부서 상수로
+        html += `<div class="departFlex">
+                        ${depart.dname} <button class="btnEdit" onclick="departEdit(${depart.dno})"> 수정 </button>
+                        <button class="btnDelete" onclick="departDelete(${depart.dno})"> 삭제 </button>
+                    </div>`;
+    }   // ` 백틱 위치 잘 봐라
+    // (3) 출력
+    departBox.innerHTML = html; // console.log(html);
+}
+
+// 1-3 부서 목록 수정함수 : 새 정보를 받아 배열 내 수정 객체 찾아 대입. <매개변수 : 부서코드> 실행조건 : [수정버튼] onclick했을 때
+function departEdit(dno) {  // depart 넘버를 매개함수로 입력
+    console.log(`departEdit XXOK`)
+    console.log(dno);
+    // (1) 수정할 번호의 객체를 찾는다. for문에서 if문으로 부서 코드가 같은지 확인
+    for (let i = 0; i <= departList.length - 1; i++) {
+        let depart = departList[i]
+        if (depart.dno == dno) { // 부서리스트의 인덱스 숫자가 상수 dno 숫자와 같을 때
+            const dname = prompt('수정할 부서명을 입력하세요.');
+            depart.dname = dname; // 프롬프트에 적은 문자열로 변경.
+            alert('부서명 수정 완료.') // 안내
+            departPrint(); // 부서목록 새로고침
+            return; // 함수 강제 종료.
+        }   // if end
+    }   // for end
+    // (2) 수정할 번호가 없을 경우
+    alert('없는 부서명입니다.');
+} // func end
+
+// 1-4 부서 목록 삭제함수 : 배열내 삭제할 개체를 찾아 .splice 한다. <매개변수 : 부서코드> 실행조건 : [삭제버튼] onclick했을 때
+function departDelete(dno) { // depart 넘버 매개함수로 입력
+    console.log(`departDelete XXOK`)
+    console.log(dno);
+    // (1) 삭제할 번호의 객체를 찾는다. for문 if문 splice 활용
+    for (let i = 0; i <= departList.length - 1; i++) {
+        if(departList[i].dno == dno) { // i번째 부서코드가 삭제할 부서코드와 같으면
+            departList.splice(i , 1); // 해당 i(인덱스)에서 1개 요소 삭제
+            alert(`부서명 삭제 완료`) // 안내
+            departPrint(); // 부서목록 새로고침
+            return; // 함수 강제 종료
+        }   // if end
+    }   // for end
+    // (2) 삭제할 번호가 없는 경우
+    alert('삭제할 수 없습니다.');
+}   // func end
+
+// 2-1 사원 등록함수 : 실행조건 : 등록버튼 눌렀을 때 
+function employAdd() {
+    console.log(`employAdd XXOK`);
+}
