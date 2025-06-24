@@ -87,36 +87,39 @@ function cartsList() {
 
     // 1. 마크업 객체 가져오기
     const cartItemList = document.querySelector('.cartList tbody');
-
+    const cartTotalSum = document.querySelector('.cartList tfoot th:nth-child(2)');
     // 임시 초기값 상품 선택에서 데이터 가져올 예정   
-    // cartList = [{ cno: 1, pno: 1, count: 1 }];
+    //cartList = [ { cno : 1,pno : 1, count : 1 } ]; 
     console.log(cartList);
 
     let tbodyCart = '';
+    cartSum = 0;
     // 2. 장바구니 배열 순회(로컬 스토리지)
-    for (let i = 0; i <= productList.length - 1; i++) {
+    for (let i = 0; i <= productList.length - 1; i++) {  // 3. 상품 배열 순회 매칭(pno) 
         let product = productList[i]; console.log(product);
+
         for (let i = 0; i <= cartList.length - 1; i++) {
-            let cart = cartList[i]; console.log(cart);
-            if (product.pno == cart.pno) {
-                console.log(cart.pno);
+            console.log(cartList);
+            let cart = cartList[i];
+
+            if (product.pno === cart.pno) {
+                console.log(cart.pno); // 4. 해당 장바구니 베열 객체 HTML 반복구문 돌리기
+
                 tbodyCart += `<tr>
                             <td> ${product.pname}</td>
                             <td> ${product.pprice.toLocaleString()} </td>
                             <td> ${cart.count} </td>
                             <td> ${(product.pprice * cart.count).toLocaleString()}</td>
-                            <td> <button onclick=""> 삭제 </button> </td>
+                            <td> <button onclick="cartDelete(${cart.cno})"> 삭제 </button> </td>
                         </tr>`
+                cartSum += (product.pprice * cart.count); // 5. 상품 총금액과 장바구니 총 결제금액 연산
             }
-
         }
-
     }
     cartItemList.innerHTML = tbodyCart;
+    cartTotalSum.innerHTML = cartSum.toLocaleString();
+    console.log(cartSum.toLocaleString());
 
-    // 3. 상품 배열 순회 매칭(pno)
-    // 4. 해당 장바구니 베열 객체 HTML 반복구문 돌리기
-    // 5. 상품 총금액과 장바구니 총 결제금액 연산
 }
 
 
