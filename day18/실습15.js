@@ -230,6 +230,8 @@ function employAdd() {
     const rankInput = document.querySelector('#rankInput'); console.log(rankInput);
     const imgInput = document.querySelector('#imgInput'); console.log(imgInput);
     // (2) input 입력값 가져오기
-    //const dno =
-
+    const dno = employInput.value; console.log(dno);    //  부서 넘버를 가져오기
+    const ename = nameInput.value; console.log(ename);  // 직원명
+    const erank = rankInput.value; console.log(erank);  // 직급명
+    const eimg = imgInput.value; console.log(eimg);     // 사진
 }
