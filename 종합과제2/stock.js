@@ -61,7 +61,7 @@ function StockRegistration() {
     // 2-2. 객체를 리스트에 넣기
     stockList.push(obj);
     let jsonData = JSON.stringify(stockList)
-    localStorage.setItem('stockList', jsonData )
+    localStorage.setItem('stockList', jsonData)
     console.log(stockList);
     stocksList();
     // 재고 목록 업데이트 함수 넣기
@@ -198,6 +198,7 @@ function stockEdit(sno) {   // 재고 코드를 매개함수로 입력하기
         if (stock.sno == sno) {    // 재고리스트 인덱스의 재고 코드가, 찾는 재고 코드와 같다면
             const scuz = prompt('변경된 입출사유를 입력하세요.');
             stock.scuz = scuz; // 프롬프트에 적은 문자열로 변경
+            localStorage.setItem('stockList', JSON.stringify(stockList));
             alert('입출사유 수정 성공') // 안내
             stocksList(); // 재고 로그 조회 새로고침
             return; // 함수 종료

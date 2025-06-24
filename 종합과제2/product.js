@@ -132,15 +132,11 @@ function productDelete(pno) {  // 버튼 눌렀을 때 삭제하는 함수
     for (let i = 0; i <= productList.length - 1; i++) {
         product = productList[i]
         if (product.pno == pno) {   // 프로덕트리스트 인덱스의 프로덕트 넘버가, 찾으려는 프로덕트 넘버와 같다면
-            localStorage.removeItem(product)
-            console.log(product.pno)
-            // let jsonData = JSON.parse(productList);
-            // jsonData.splice(i, 1);  // 해당 인덱스에서 1개 요소 삭제하기
-            // JSON.stringify(productList);
+            productList.splice(i, 1);  // 해당 인덱스에서 1개 요소 삭제하기
+            localStorage.setItem('productList' , JSON.stringify(productList));
             alert(`제품 삭제 완료`); // 안내
             productsList(); // 제품 목록 자동 업데이트. 제품 조회 함수명에 따라 변경하기!!!
             stockTypeOption();  // 재고 변동 카테고리 함수 호출
-
             return; // 함수 종료
         }   // if end
     }   // for end

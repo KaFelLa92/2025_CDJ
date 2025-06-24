@@ -7,12 +7,12 @@
 
 let productList = localStorage.getItem('productList');
 
-if ( productList == null ){
+if (productList == null) {
     productList = [];
-}else {
-    productList = JSON.parse( productList );
+} else {
+    productList = JSON.parse(productList);
 };
-console.log( productList );
+console.log(productList);
 
 
 
@@ -25,9 +25,39 @@ console.log( productList );
 
 let stockList = localStorage.getItem('stockList');
 
-if ( stockList == null ){
+if (stockList == null) {
     stockList = [];
-}else {
-    stockList = JSON.parse( stockList );
+} else {
+    stockList = JSON.parse(stockList);
 };
-console.log( stockList );
+console.log(stockList);
+
+/*
+
+사용자 페이지 기능을 담을 HTML 구조를 구현합니다. CSS 스타일링은 이 단계에서 제외됩니다.
+
+제품 표시 영역: 각 제품의 이미지, 제품명, 가격 정보를 모두 출력하시오 , 테이블(table) 혹은 카드/그리드(div) 등등 표현하기.
+
+장바구니 영역: 선택된 제품의 장바구니 항목을 위한 리스트 또는 테이블 구조, 삭제 버튼 (<button>) 포함. 장바구니 총 금액 표시 요소.
+
+결제 버튼 영역: '주문하기' 또는 '결제하기' 버튼 (<button>) 포함.
+
+*/
+
+//=================================장바구니 리스트=================================
+
+
+// cartList = {
+//     cno : 1,
+//     pno : 1,
+//     count : 1
+// };
+
+let cartList = localStorage.getItem('cartList');
+if (cartList == null) {
+    cartList = [];
+} else {
+    cartList = JSON.parse(cartList);
+};
+console.log(cartList);
+
