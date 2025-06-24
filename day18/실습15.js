@@ -235,20 +235,31 @@ function employAdd() {
     const ename = nameInput.value; console.log(ename);  // 직원명
     const erank = rankInput.value; console.log(erank);  // 직급명
     const eimg = imgInput.files[0]; console.log(eimg);     // 첨부파일은 files[0] : 첫 번째 파일 객체
-    // (3) 유효성검사
+    // (3) 날짜 시간 구하기 
+    let year = new Date().getFullYear(); // 현재 연도 반환 함수.
+    let month = new Date().getMonth() + 1; // 현재 월 반환 함수 * 1월이 0부터 시작하므로 +1 넣기
+    month = month < 9 ? `0${month}` : month; // 삼항연산자로 month값 9보다 작을 경우 앞에 0을 넣으세요
+    let day = new Date().getDate(); // 현재 일 반환 함수
+    day = day < 9 ? `0${day}` : day; // 일이 한 자리 수면 앞에 0 붙여!
+    let edate = `${year}-${month}-${day}`; // ` 백틱 주의하시오
+    console.log(edate)
+    
+    // (4) 유효성검사
     if (dno == '' || ename == '' || erank == '' ) {   // 부서, 이름, 직급 입력 안되어있으면 출력 안함
         alert('정보를 입력하세요.');
         return; // 아래 코드를 생략하고 함수 종료
     }
-    // (4) 데이터 객체화
+    // (5) 데이터 객체화
     const employ = {    // 필요한 데이터 객체로 묶기
         eno: ++currentEno ,     // 현재 사원코드에 1 증가 후 구성하기
         dno: Number(dno) ,  // 부서코드는 리터럴
         ename: ename ,
         erank: erank ,
         eimg: eimg ? URL.createObjectURL(eimg) : 'https://placehold.co/100x100' ,
-        // edate: edate 연월일 입력 위에 넣기
+        edate: edate //연월일 입력 위에 넣기
     }; console.log(employ);
-
+    // (6) 객체 배열에 저장
+    employList.push(employ); console.log(employList);
+    // (7) 기타
 
 }
