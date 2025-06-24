@@ -55,34 +55,47 @@ checkStatus() 구현 (대기 확인):
         (5) localStorage 'waitingList'라는 키로 저장
 */
 
-const waitingList = [
-    { no: 1, name: 'johnDo', phone: '010-1234-5678', count: 3 },
-    { no: 2, name: 'killDong', phone: '010-9633-7411', count: 1 }
-]
+// const waitingList = [
+//     { no: 1, name: 'johnDo', phone: '010-1234-5678', count: 3 },
+//     { no: 2, name: 'killDong', phone: '010-9633-7411', count: 1 }
+// ]
 
+// 1 저장 C : 대기 등록
 function addWaiting() {
     console.log("wait Pz")
     // 1. 입력 마크업 객체 가져오기
     const nameInput = document.querySelector('.nameInput'); console.log(nameInput);
     const phoneInput = document.querySelector('.phoneInput'); console.log(phoneInput);
     const numInput = document.querySelector('.numInput'); console.log(numInput);
-    // 2. 입력 마크업 객체내 입력값 가져오기
+    // 2. 입력 마크업 객체내 입력값 가져오기(저장)
     const name = nameInput.value; console.log(name);
     const phone = phoneInput.value; console.log(phone);
     const count = numInput.value; console.log(count);
-    // 3. 객체화
-    let no = 1; // 대기번호 초기값
+    // 3. 객체화    -> 자바가 할 거임
+    // 함수화된 localStorage에서 배열 불러오기
+
     // (1) localStorage에서 waitingList 가져오기
-    let waitingList = localStorage.getItem('waitingList');  // .getItem('속성명/key')
-    // (2) waitingList가 존재하지 않을 때, 배열 새로 생성. 존재하면 타입변환.
-    if (waitingList == null) { // 대기리스트(속성명)가 없으면
-        waitingList = []; // 배열로 만든다.
-    } else { // 속성명 존재할 경우, JSON(배열타입)으로 변환.
-        waitingList = JSON.parse(waitingList);  // 객체를 숫자로 바꿔줌
-        no = waitingList[waitingList.length - 1].no + 1; // 배열 내 마지막 인덱스 회원번호 1 증가
-    }
+
+    let waitingList = getLocalStorage();
+    const no = waitingList.length == 0 ? 1 :waitingList[ waitingList.length - 1].no + 1;
+
+    // let no = 1;
+    // if (waitingList.length - 1 >= 0) {
+    //     no = waitingList[waitingList.length - 1].no + 1; // 배열 내 마지막 인덱스 회원번호 1 증가
+    // }
+
+    // let waitingList = localStorage.getItem('waitingList');  // .getItem('속성명/key')
+    // // (2) waitingList가 존재하지 않을 때, 배열 새로 생성. 존재하면 타입변환.
+    // if (waitingList == null) { // 대기리스트(속성명)가 없으면
+    //     waitingList = []; // 배열로 만든다.
+    // } else { // 속성명 존재할 경우, JSON(배열타입)으로 변환.
+    //     waitingList = JSON.parse(waitingList);  // 객체를 숫자로 바꿔줌
+    //     no = waitingList[waitingList.length - 1].no + 1; // 배열 내 마지막 인덱스 회원번호 1 증가
+    // }
+
+    // (3) 객체를 상수로 지정하기
     const obj = { no: no, name: name, phone: phone, count: count }; console.log(obj);
-    // 4. 배열 저장
+    // 4. 배열에 객체 저장  -> 이것도 자바가 할 거임
     waitingList.push(obj); console.log(waitingList);
     alert(`대기 등록 완료`); // 알림
     // localStorage에서 waitingList 저장하기
@@ -93,13 +106,14 @@ function addWaiting() {
 
 } // func end
 
+// 2 조회/비교 R : 대기 확인
 function checkStatus() {
     console.log('check your count.')    // 수시로 확인
     // 1. 입력 마크업 객체 가져오기
     const phoneCheck = document.querySelector('.phoneCheck'); console.log(phoneCheck);
-    // 2. 입력 마크업 객체내 입력값 가져오기
+    // 2. 입력 마크업 객체내 입력값 가져오기(비교)
     const waitC = phoneCheck.value; console.log(waitC);
-    // 3. localStorage에 저장된 입력받은 값과 일치하는 정보를 for문으로 순회하며 찾기
+    // 3. localStorage에 저장된 입력받은 값과 일치하는 정보를 for문으로 순회하며 찾기 (배열 목록 조회)
     // localStorage에서 waitingList 가져오기
     let waitingList = localStorage.getItem(`waitingList`); // 'waitingList'라는 속성값 가져오기
     if (waitingList == null) { // 만약 waitingList라는 이름의 속성값이 존재하지 않으면
@@ -118,3 +132,20 @@ function checkStatus() {
     alert('대기번호가 없습니다. 등록해주세요.')
 
 }   // func end
+
+
+// 3 localStorage 관리하는 함수
+function setLocalStorage(waitingList) {
+    localStorage.setItem('waitingList', JSON.stringify(waitingList))
+
+} // func end
+
+function getLocalStorage() {
+    let waitingList = localStorage.getItem('waitingList');
+    if (waitingList == null) {
+        waitingList = []
+    } else {
+        waitingList = JSON.parse(waitingList)
+    }
+    return waitingList; //
+}

@@ -101,10 +101,10 @@ CSS는 선택
 
  2. 사원 관리
     (1) 사원 등록함수       -> employAdd()
-    (2) 사원 목록 출력함수  -> employPrint()
-    (3) 사원 목록 수정함수  -> employEdit()
-    (4) 사원 목록 삭제함수  -> employDelete()
-    (5) 사원 등록 미리보기함수 -> employPriview()
+    (2) 사원 등록 미리보기함수 -> employPriview()
+    (3) 사원 목록 출력함수  -> employPrint()
+    (4) 사원 목록 수정함수  -> employEdit()
+    (5) 사원 목록 삭제함수  -> employDelete()
 
  3. 휴가 관리
     (1) 휴가 신청함수       -> vacaApp()
@@ -210,8 +210,8 @@ function departDelete(dno) { // depart 넘버 매개함수로 입력
     console.log(dno);
     // (1) 삭제할 번호의 객체를 찾는다. for문 if문 splice 활용
     for (let i = 0; i <= departList.length - 1; i++) {
-        if(departList[i].dno == dno) { // i번째 부서코드가 삭제할 부서코드와 같으면
-            departList.splice(i , 1); // 해당 i(인덱스)에서 1개 요소 삭제
+        if (departList[i].dno == dno) { // i번째 부서코드가 삭제할 부서코드와 같으면
+            departList.splice(i, 1); // 해당 i(인덱스)에서 1개 요소 삭제
             alert(`부서명 삭제 완료`) // 안내
             departPrint(); // 부서목록 새로고침
             return; // 함수 강제 종료
@@ -224,4 +224,12 @@ function departDelete(dno) { // depart 넘버 매개함수로 입력
 // 2-1 사원 등록함수 : 실행조건 : 등록버튼 눌렀을 때 
 function employAdd() {
     console.log(`employAdd XXOK`);
+    // (1) input(입력 마크업 객체) 값을 가져오기
+    const employInput = document.querySelector('#employInput'); console.log(employInput);
+    const nameInput = document.querySelector('#nameInput'); console.log(nameInput);
+    const rankInput = document.querySelector('#rankInput'); console.log(rankInput);
+    const imgInput = document.querySelector('#imgInput'); console.log(imgInput);
+    // (2) input 입력값 가져오기
+    //const dno =
+
 }
