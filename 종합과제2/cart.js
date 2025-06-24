@@ -37,43 +37,53 @@ function cartProductsList() {
         let product = productList[i]; // console.log(product);
 
         html += `<tr>
-                    <td> <img class="cartImg" onclick="addCart()" src= ${product.pimg} /> </td>
+                    <td> <img class="cartImg" onclick="addCart(${product.pno})" src= ${product.pimg} /> </td>
                     <td class="productName">${product.pname}</td>
                     <td> ${product.pprice.toLocaleString()}  </td>
                 </tr>`
 
     }
     tbody.innerHTML = html;
-
 }
 
 
-// 2. 장바구니 등록
 // 실행조건 : 이미지를 클릭했을 때
 // cartlist에 추가하기
 
-function addCart() {
+function addCart(pno) {
     console.log('----addCart----');
-    let productName = document.querySelector('.productName').innerHTML;
-    // console.log( productName );
+    let check = true;
     let cno = cartList.length == 0 ? 1 : cartList[cartList.length - 1].cno + 1;
-    let count = cartList.length == 0 ? 1 : cartList[cartList.length - 1].count + 1;
+    let count = 1;
+
+    for (let i = 0; i <= cartList.length - 1; i++) {
+        let cart = cartList[i];
+        // console.log( cart.pno );
+        if (pno == cart.pno) {
+            check = false;
+            cart.count++;
+            console.log(cartList)
+            let jsonData = JSON.stringify(cartList);
+            localStorage.setItem('cartList', jsonData);
+        }
+    }
+
     for (let i = 0; i <= productList.length - 1; i++) {
-        let product = productList[i];
-        // console.log( product.pname );
-        if (product.pname == productName) {
+        let product = productList[i];        // console.log( product.pno );
+        if (pno == product.pno && check == true) {
+            console.log(product.pname)
             let obj = {
                 cno: cno++,
-                pno: product.pno,
-                count: count++
+                pno: pno,
+                count: count
             }
-            console.log(obj);
             cartList.push(obj);
             let jsonData = JSON.stringify(cartList);
             localStorage.setItem('cartList', jsonData);
         }
     }
-}
+    cartsList();
+};
 
 // 3. 장바구니 조회
 

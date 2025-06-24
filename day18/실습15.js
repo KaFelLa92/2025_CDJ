@@ -129,6 +129,7 @@ const employList = [
     { eno: 3, dno: 3, ename: '오지원', erank: '대리', eimg: 'https://placehold.co/100x100', edate: '2025-06-20' },
     { eno: 4, dno: 1, ename: '강홍보', erank: '주임', eimg: 'https://placehold.co/100x100', edate: '2025-06-20' },
 ];
+let currentEno = 4; // * 현재 샘플 코드번호
 
 const vacaList = [
     { vno: 1, eno: 4, vstart: '2025-06-22', vend: '2025-06-28' },
@@ -233,5 +234,21 @@ function employAdd() {
     const dno = employInput.value; console.log(dno);    //  부서 넘버를 가져오기
     const ename = nameInput.value; console.log(ename);  // 직원명
     const erank = rankInput.value; console.log(erank);  // 직급명
-    const eimg = imgInput.value; console.log(eimg);     // 사진
+    const eimg = imgInput.files[0]; console.log(eimg);     // 첨부파일은 files[0] : 첫 번째 파일 객체
+    // (3) 유효성검사
+    if (dno == '' || ename == '' || erank == '' ) {   // 부서, 이름, 직급 입력 안되어있으면 출력 안함
+        alert('정보를 입력하세요.');
+        return; // 아래 코드를 생략하고 함수 종료
+    }
+    // (4) 데이터 객체화
+    const employ = {    // 필요한 데이터 객체로 묶기
+        eno: ++currentEno ,     // 현재 사원코드에 1 증가 후 구성하기
+        dno: Number(dno) ,  // 부서코드는 리터럴
+        ename: ename ,
+        erank: erank ,
+        eimg: eimg ? URL.createObjectURL(eimg) : 'https://placehold.co/100x100' ,
+        // edate: edate 연월일 입력 위에 넣기
+    }; console.log(employ);
+
+
 }
