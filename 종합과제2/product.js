@@ -74,6 +74,7 @@ function productRegistration() {
         return;                         // 반환값 없는 함수 종료      
     }
 
+    const productList = getProducts();
     let pno = productList.length == 0 ? 1 : productList[productList.length - 1].pno + 1;
 
     // 2. 어디에 : 제품 목록에
@@ -133,7 +134,7 @@ function productDelete(pno) {  // 버튼 눌렀을 때 삭제하는 함수
         product = productList[i]
         if (product.pno == pno) {   // 프로덕트리스트 인덱스의 프로덕트 넘버가, 찾으려는 프로덕트 넘버와 같다면
             productList.splice(i, 1);  // 해당 인덱스에서 1개 요소 삭제하기
-            localStorage.setItem('productList' , JSON.stringify(productList));
+            localStorage.setItem('productList', JSON.stringify(productList));
             alert(`제품 삭제 완료`); // 안내
             productsList(); // 제품 목록 자동 업데이트. 제품 조회 함수명에 따라 변경하기!!!
             stockTypeOption();  // 재고 변동 카테고리 함수 호출
@@ -143,3 +144,28 @@ function productDelete(pno) {  // 버튼 눌렀을 때 삭제하는 함수
     // (2) 삭제할 제품 번호가 안 맞으면?
     alert('삭제할 제품이 없습니다.');
 }   // func end
+
+// (1) localStorage에서 배열 가져오는 함수
+// (2) 사용처 : products 배열이 필요한 곳에서 호출
+function getProducts() {
+    // 1. 호출하기
+    let products = localStorage.getItem('products')
+    // 2. 만약 호출값이 비어있으면 빈 배열로 초기화
+    if (products == null) {
+        products = [];
+    } else {    // 아니면 JSON 타입으로 변환
+        products = JSON.parse(products);
+    }
+    // 3. 호출된 products 배열을 함수 호출했던 곳으로 반환
+    return products;
+} // func end
+
+// (1) 함수호출 시 전달받은 매개변수 products를 localStorage에서 저장하기 
+// (2) 사용처 : products 배열의 변화가 있는 곳
+function setProducts(products) {
+    // 1. 저장하기
+    localStorage.setItem('products', JSON.stringify(products))
+}
+
+
+

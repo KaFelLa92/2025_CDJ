@@ -143,7 +143,7 @@ function productAdd() {
     // 6. 구성한 객체를 배열에 저장
     productList.push(product); console.log(productList);
     // 7. 기타등등
-    categoryInput.value = '';
+    categoryInput.value = '';   // 입력 필드 비우기
     pnameInput.value = '';
     ppriceInput.value = '';
     alert('[성공] 제품등록')
