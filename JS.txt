@@ -406,9 +406,21 @@ JS 자료형은 미리 결정하지 않고 코드 실행 동안 결정되기에,
             * 소괄호 안부터 연산 시작한다
         (2) 비동기통신 ( *나중에 배워요 (JS외부페이지) )
 
-            
+[ interval ]
+    1. 정의 : 시간적인 간격에 따른 특정 함수 실행
+    2. 사용법 : 
+        (1) setInterval( 함수명 , 밀리초 ); : 특정함수 밀리초마다 실행
+            - 밀리초 : 1/1000초
+            - 반환값 : interval 객체 반환
 
+        (2) clearInterval( interval 객체 ); : 특정 interval 중지
+    3. 예시
+            let 변수명 = setInterval ( 함수명, 밀리초 );
+            clearInterval( 변수명 );
 
-
+[ 부트스트랩 ] : HTML/CSS/JS 라이브러리 , https://getbootstrap.com
+[ Chart.js ] : 차트(시각화) 라이브러리 , https://www.chartjs.org
+    라이브러리는 설치(CDN)를 해야 사용 가능합니다
+[ CDNJS] : CDN을 모아둔 곳 , https://cdnjs.com/
 
 
