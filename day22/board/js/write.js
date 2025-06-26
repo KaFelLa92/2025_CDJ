@@ -9,7 +9,7 @@ function boardWrite() {
     const pwd = pwdInput.value;
     // 3. 객체화
     const obj = {
-        title: title,
+        title: title,   // 속성명과 값이 똑같으면 값 생략 가능. ex) title,
         content: content,
         pwd: pwd
     };
