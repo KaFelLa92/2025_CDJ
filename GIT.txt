@@ -62,3 +62,8 @@
 
 [ 자리변경후]
     (1) 리포지토리 가져오기
+    (2) 터미널 -> git bash -> 유저네임과 이메일 동기화
+        git config --global user.name "KaFelLa92"
+        git config --global user.email "choidj10@gmail.com"
+    
+
