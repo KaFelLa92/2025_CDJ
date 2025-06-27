@@ -14,8 +14,6 @@ if (productList == null) {
 };
 console.log(productList);
 
-
-
 // const stockList = [ // true는 입고, false는 출고.
 //     { sno: 1, pno: 1, stype: true, scount: 3, scuz: "제품수량부족" },
 //     { sno: 2, pno: 2, stype: false, scount: 2, scuz: "제품과다" },

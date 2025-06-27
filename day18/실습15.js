@@ -115,7 +115,7 @@ CSS는 선택
 
 
 const departList = [
-    { dno: 1, dname: '마케팅부' },
+    { dno: 1, dname: '마케팅' },
     { dno: 2, dname: '재무부' },
     { dno: 3, dname: '지원부' },
     { dno: 4, dname: '개발부' },
@@ -132,10 +132,12 @@ const employList = [
 let currentEno = 4; // * 현재 샘플 코드번호
 
 const vacaList = [
-    { vno: 1, eno: 4, vstart: '2025-06-22', vend: '2025-06-28' },
-    { vno: 2, eno: 1, vstart: '2025-05-19', vend: '2025-06-23' },
-    { vno: 3, eno: 2, vstart: '2025-06-15', vend: '2025-06-27' }
+    { vno: 1, eno: 4, vstart: '2025-06-22', vend: '2025-06-28', vinfo: '개인사정' },
+    { vno: 2, eno: 1, vstart: '2025-05-19', vend: '2025-06-23', vinfo: '친구결혼식' },
+    { vno: 3, eno: 2, vstart: '2025-06-15', vend: '2025-06-27', vinfo: '급체' }
 ];
+
+let currentVno = 3;
 
 
 
@@ -184,6 +186,16 @@ function departPrint() {
     }   // ` 백틱 위치 잘 봐라
     // (3) 출력
     departBox.innerHTML = html; // console.log(html);
+
+    // (4) 사원등록 항의 부서 목록 출력
+    const employInput = document.querySelector('#employInput ');
+    html += `<option value="" disabled selected> 부서를 선택하세요. </option>`
+    for (let i = 0; i <= departList.length - 1; i++) {
+        const employ = departList[i];
+        html += `<option value="${employ.dno}"> ${employ.dname} </option> `
+    }
+    employInput.innerHTML = html;
+
 }
 
 // 1-3 부서 목록 수정함수 : 새 정보를 받아 배열 내 수정 객체 찾아 대입. <매개변수 : 부서코드> 실행조건 : [수정버튼] onclick했을 때
@@ -243,23 +255,196 @@ function employAdd() {
     day = day < 9 ? `0${day}` : day; // 일이 한 자리 수면 앞에 0 붙여!
     let edate = `${year}-${month}-${day}`; // ` 백틱 주의하시오
     console.log(edate)
-    
+
     // (4) 유효성검사
-    if (dno == '' || ename == '' || erank == '' ) {   // 부서, 이름, 직급 입력 안되어있으면 출력 안함
+    if (dno == '' || ename == '' || erank == '') {   // 부서, 이름, 직급 입력 안되어있으면 출력 안함
         alert('정보를 입력하세요.');
         return; // 아래 코드를 생략하고 함수 종료
     }
     // (5) 데이터 객체화
     const employ = {    // 필요한 데이터 객체로 묶기
-        eno: ++currentEno ,     // 현재 사원코드에 1 증가 후 구성하기
-        dno: Number(dno) ,  // 부서코드는 리터럴
-        ename: ename ,
-        erank: erank ,
-        eimg: eimg ? URL.createObjectURL(eimg) : 'https://placehold.co/100x100' ,
+        eno: ++currentEno,     // 현재 사원코드에 1 증가 후 구성하기
+        dno: Number(dno),  // 부서코드는 리터럴
+        ename: ename,
+        erank: erank,
+        eimg: eimg ? URL.createObjectURL(eimg) : 'https://placehold.co/100x100',
         edate: edate //연월일 입력 위에 넣기
     }; console.log(employ);
     // (6) 객체 배열에 저장
     employList.push(employ); console.log(employList);
     // (7) 기타
+    alert('사원 등록되었습니다.')
 
+    // (8) 미리보기 기능
+    const employAddRight = document.querySelector('.employAddRight')
+    // 부서넘버로 부서명 출력
+    for (let i = 0; i <= departList.length - 1; i++) {
+        if (departList[i].dno == employ.dno) {
+            dname = departList[i].dname;
+            break;
+        }
+
+    }
+    let html = '';
+    html += `<img id="imgPreview" src="${employ.eimg}" alt="employPhoto" />
+                        <p id="textPreview"> 사원번호: 00${employ.eno} <br /> 부서: ${dname} <br /> 성함: ${employ.ename} <br /> 직급: ${employ.erank} <br /> 등록일:
+                            ${employ.edate} </p>`
+
+    employAddRight.innerHTML = html;
+    employPrint();
+}
+
+// (3) 사원 목록 출력함수  -> employPrint()
+employPrint();
+function employPrint() {
+    const employBody = document.querySelector('#employBody')
+    let html = '';
+    for (let i = 0; i <= employList.length - 1; i++) {
+        const employ = employList[i];
+        let dname = '';
+        for (let j = 0; j <= departList.length + 1; j++) {
+            if (departList[j].dno === employ.dno) {
+                dname = departList[j].dname;
+                break;
+            }
+        }
+        html += `<tr>
+                    <td> <img src="${employ.eimg}" /> </td>
+                    <td> ${employ.ename} </td>
+                    <td> ${dname} </td>
+                    <td> ${employ.erank} </td>
+                    <td> <button class="btnEdit" onclick="employEdit(${employ.eno})"> 수정 </button> </td>
+                    <td> <button class="btnDelete" onclick="employDelete(${employ.eno})"> 삭제 </button> </td>
+                 </tr>`
+    }
+    employBody.innerHTML = html;
+
+    // 휴가등록 항의 사원명 출력
+    const employName = document.querySelector('#employName');
+    let html2 = `<option value="" disabled selected> 사원명 </option>`;
+    for (let i = 0; i <= employList.length - 1; i++) {
+        const employ = employList[i];
+        html2 += `<option value="${employ.eno}"> ${employ.ename} </option> `
+    }
+
+    employName.innerHTML = html2;
+}
+
+//(4) 사원 목록 수정함수
+function employEdit(eno) {
+    for (let i = 0; i <= employList.length - 1; i++) {
+        if (employList[i].eno == eno) {
+            const ename = prompt('수정할 사원명을 입력하세요.')
+            let dname = prompt('수정할 부서명을 입력하세요.')
+            const erank = prompt('수정할 직급명을 입력하세요.')
+            let foundDno = null;
+            for (let j = 0; j <= departList.length - 1; j++) {
+                if (departList[j].dname == dname) {
+                    foundDno = departList[j].dno
+                    break;
+                }
+            }
+
+            if (foundDno == null) {
+                alert('입력한 부서명이 존재하지 않습니다.');
+                return;
+            }
+
+            employList[i].ename = ename;
+            employList[i].dno = foundDno;
+            employList[i].erank = erank;
+            alert('사원 목록 수정되었습니다.')
+            employPrint();
+            return;
+        }
+
+    }
+    alert('해당 사원 목록을 수정할 수 없습니다.')
+}
+
+//(5) 사원 목록 삭제함수
+function employDelete(eno) {
+    for (let i = 0; i <= employList.length - 1; i++) {
+        if (employList[i].eno == eno) {
+            employList.splice(i, 1);
+            alert('사원 목록 삭제되었습니다.')
+            employPrint();
+            return;
+        }
+    }
+    alert('해당 사원 목록을 삭제할 수 없습니다.');
+
+}
+
+// 3-1 휴가 신청함수       -> vacaApp()
+
+function vacaApp() {
+    const employName = document.querySelector('#employName')
+    const vacaStart = document.querySelector('#vacaStart')
+    const vacaEnd = document.querySelector('#vacaEnd')
+    const vacaInput = document.querySelector('#vacaInput')
+
+    const ename = employName.value;
+    const vstart = vacaStart.value;
+    const vend = vacaEnd.value;
+    const vinfo = vacaInput.value;
+
+    const vacation = {
+        vno: ++currentVno,
+        eno: Number(ename),
+        vstart,
+        vend,
+        vinfo
+    }
+
+    vacaList.push(vacation);
+    alert('휴가 신청 완료')
+    employName.value = '';
+    vacaStart.value = '';
+    vacaEnd.value = '';
+    vacaInput.value = '';
+    vacaPrint();
+
+}
+
+// 3-2 휴가 목록 출력함수  -> vacaPrint()
+
+vacaPrint();
+function vacaPrint() {
+    const vacaBox = document.querySelector('#vacaBox');
+    let html = '';
+
+    for (let i = 0; i <= vacaList.length - 1; i++) {
+        const vaca = vacaList[i]
+        let ename = '';
+        for (let j = 0; j <= employList.length - 1; j++) {
+            if (employList[j].eno == vaca.eno) {
+                ename = employList[j].ename;
+                break;
+            }
+        }
+        html += `<tr>
+                    <td> ${ename} </td>
+                    <td> ${vaca.vstart} </td>
+                    <td> ${vaca.vend} </td>
+                    <td> ${vaca.vinfo} </td>
+                    <td> <button class="btnCancel" onclick="vacaCancel(${vaca.vno})"> 신청취소 </button> </td>
+                </tr>`
+    }
+    vacaBox.innerHTML = html;
+}
+
+
+// 3-3 휴가 목록 신청 취소함수  -> vacaCancel()
+
+function vacaCancel(vno) {
+    for(let i = 0; i <= vacaList.length - 1; i++){
+        if(vacaList[i].vno == vno){
+            vacaList.splice(i , 1);
+            alert('휴가 신청이 취소되었습니다.')
+            vacaPrint();
+            return;
+        }
+    }
+    alert('휴가 신청을 취소할 수 없습니다.')
 }
