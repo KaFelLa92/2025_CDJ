@@ -151,3 +151,6 @@
             https://kafella92.github.io/폴더명/xxxx.html/
             7) 루트(최상위) 경로 주소에 index.html 있어야 작동할걸?
         3. 
+
+    [ 프로젝트 ]
+        1) 캔바작업
